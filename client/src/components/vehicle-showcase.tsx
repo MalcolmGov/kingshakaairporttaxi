@@ -1,24 +1,40 @@
 export default function VehicleShowcase() {
   const vehicles = [
     {
-      name: "Standard Sedan",
-      image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-      alt: "Professional sedan taxi"
+      name: "Hatchbacks",
+      capacity: "3 Seater",
+      image: "https://kingshakaairporttaxi.co.za/wp-content/uploads/2023/09/car.06.46-1024x768.jpeg",
+      alt: "King Shaka Airport Taxi Hatchback"
     },
     {
-      name: "Executive Class",
-      image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-      alt: "Luxury business vehicle"
+      name: "Sedan",
+      capacity: "3 Seater",
+      image: "https://kingshakaairporttaxi.co.za/wp-content/uploads/2023/09/WhatsApp-Image-2023-09-05-at-09.06.45-1.jpeg",
+      alt: "King Shaka Airport Taxi Sedan"
     },
     {
-      name: "Family SUV", 
-      image: "https://pixabay.com/get/gbbf6cd220968e167017f7ca83d683f2a18bfa874ef08d38783ae879943191eeec6ee03ab01227eb669ad24deeb146c39642f8f7ec04105ad7c34799884112fc0_1280.jpg",
-      alt: "Spacious SUV taxi"
+      name: "SUV",
+      capacity: "3 Seater", 
+      image: "https://kingshakaairporttaxi.co.za/wp-content/uploads/2023/09/motor-vehicle.06.45-1024x768.jpeg",
+      alt: "King Shaka Airport Taxi SUV"
     },
     {
-      name: "Group Transport",
-      image: "https://pixabay.com/get/ga73e4f5bb02abd5046874e15fbd5a0ce8f564a0909f58638dc00834f144e1b6c852bcf92799ea2b1765478d79c7cb658e4551f9b0d3fa00eb2c8329d9d3db25f_1280.jpg",
-      alt: "Group transport van"
+      name: "Luxury Cabs",
+      capacity: "3 Seater",
+      image: "https://kingshakaairporttaxi.co.za/wp-content/uploads/2023/09/WhatsApp-Image-2023-09-07-at-20.19.30.jpeg",
+      alt: "King Shaka Airport Taxi Luxury Cab"
+    },
+    {
+      name: "Mini Bus",
+      capacity: "8 Seater",
+      image: "https://kingshakaairporttaxi.co.za/wp-content/uploads/2023/09/WhatsApp-Image-2023-09-05-at-09.09.25.jpeg",
+      alt: "King Shaka branded Mini Bus for group transfers"
+    },
+    {
+      name: "Vehicle of Choice",
+      capacity: "Personalized",
+      image: "https://kingshakaairporttaxi.co.za/wp-content/uploads/2023/09/cars-june112020.jpg",
+      alt: "Fleet of King Shaka Airport Taxi cars lined up outside the airport terminal"
     }
   ];
 
@@ -34,19 +50,32 @@ export default function VehicleShowcase() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {vehicles.map((vehicle, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-xl shadow-lg" data-testid={`card-vehicle-${index}`}>
+            <div key={index} className="group relative overflow-hidden rounded-xl shadow-lg bg-card border border-border" data-testid={`card-vehicle-${index}`}>
               <img 
                 src={vehicle.image} 
                 alt={vehicle.alt} 
                 className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 data-testid={`img-vehicle-${index}`}
               />
-              <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-primary-foreground font-semibold" data-testid={`text-vehicle-name-${index}`}>
+              <div className="p-4">
+                <h3 className="font-semibold text-card-foreground text-lg mb-1" data-testid={`text-vehicle-name-${index}`}>
                   {vehicle.name}
-                </span>
+                </h3>
+                <p className="text-muted-foreground text-sm" data-testid={`text-vehicle-capacity-${index}`}>
+                  {vehicle.capacity}
+                </p>
+              </div>
+              <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="text-center text-primary-foreground">
+                  <span className="font-semibold text-lg block" data-testid={`text-vehicle-hover-name-${index}`}>
+                    {vehicle.name}
+                  </span>
+                  <span className="text-sm" data-testid={`text-vehicle-hover-capacity-${index}`}>
+                    {vehicle.capacity}
+                  </span>
+                </div>
               </div>
             </div>
           ))}
