@@ -11,49 +11,75 @@ const twilioClient = twilio(
   process.env.TWILIO_AUTH_TOKEN
 );
 
-// WhatsApp notification function
-async function sendWhatsAppNotification(booking: any) {
+// Notification function with WhatsApp and SMS backup
+async function sendBookingNotification(booking: any) {
   try {
-    const message = `🚖 NEW BOOKING REQUEST
+    const message = `NEW BOOKING REQUEST
 
-👤 Customer: ${booking.customerName}
-📞 Phone: ${booking.customerPhone}
+Customer: ${booking.customerName}
+Phone: ${booking.customerPhone}
 
-📍 Pickup: ${booking.pickup}
-📍 Destination: ${booking.destination}
+Pickup: ${booking.pickup}
+Destination: ${booking.destination}
 
-📅 Date: ${new Date(booking.date).toLocaleDateString('en-ZA')}
-⏰ Time: ${booking.time}
-👥 Passengers: ${booking.passengers}
-🚗 Vehicle: ${booking.vehicleType || 'Any available'}
+Date: ${new Date(booking.date).toLocaleDateString('en-ZA')}
+Time: ${booking.time}
+Passengers: ${booking.passengers}
+Vehicle: ${booking.vehicleType || 'Any available'}
 
-💰 Estimated Price: R${booking.estimatedPrice}
-🆔 Booking ID: ${booking.id}
+Estimated Price: R${booking.estimatedPrice}
+Booking ID: ${booking.id}
 
-✅ Please confirm this booking with the customer.`;
+Please confirm this booking with the customer.`;
 
-    // Send to both phone numbers
+    // Phone numbers to notify
     const phoneNumbers = ['+27833423975', '+27834654639'];
     
     const notificationPromises = phoneNumbers.map(async (phoneNumber) => {
       try {
         console.log(`Attempting to send WhatsApp to ${phoneNumber} for booking:`, booking.id);
-        const result = await twilioClient.messages.create({
+        
+        // Try WhatsApp first
+        const whatsappResult = await twilioClient.messages.create({
           body: message,
           from: `whatsapp:${process.env.TWILIO_PHONE_NUMBER}`,
           to: `whatsapp:${phoneNumber}`
         });
-        console.log(`✅ WhatsApp notification sent to ${phoneNumber} for booking:`, booking.id, `- Message SID: ${result.sid}`);
-        return { phoneNumber, success: true, sid: result.sid };
-      } catch (error) {
-        console.error(`❌ Failed to send WhatsApp notification to ${phoneNumber}:`, error);
-        return { phoneNumber, success: false, error: error instanceof Error ? error.message : String(error) };
+        
+        console.log(`✅ WhatsApp sent to ${phoneNumber} - SID: ${whatsappResult.sid}`);
+        return { phoneNumber, method: 'WhatsApp', success: true, sid: whatsappResult.sid };
+        
+      } catch (whatsappError) {
+        console.log(`⚠️ WhatsApp failed for ${phoneNumber}, trying SMS...`);
+        
+        // Fallback to SMS
+        try {
+          const smsResult = await twilioClient.messages.create({
+            body: message,
+            from: process.env.TWILIO_PHONE_NUMBER,
+            to: phoneNumber
+          });
+          
+          console.log(`✅ SMS sent to ${phoneNumber} - SID: ${smsResult.sid}`);
+          return { phoneNumber, method: 'SMS', success: true, sid: smsResult.sid };
+          
+        } catch (smsError) {
+          console.error(`❌ Both WhatsApp and SMS failed for ${phoneNumber}:`, smsError);
+          return { 
+            phoneNumber, 
+            method: 'failed', 
+            success: false, 
+            error: smsError instanceof Error ? smsError.message : String(smsError) 
+          };
+        }
       }
     });
     
-    await Promise.all(notificationPromises);
+    const results = await Promise.all(notificationPromises);
+    console.log('Notification results:', results);
+    
   } catch (error) {
-    console.error('Failed to send WhatsApp notifications:', error);
+    console.error('Failed to send booking notifications:', error);
   }
 }
 
@@ -64,8 +90,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const validatedData = insertBookingSchema.parse(req.body);
       const booking = await storage.createBooking(validatedData);
       
-      // Send WhatsApp notification after successful booking creation
-      await sendWhatsAppNotification(booking);
+      // Send booking notification after successful booking creation
+      await sendBookingNotification(booking);
       
       res.json(booking);
     } catch (error) {
