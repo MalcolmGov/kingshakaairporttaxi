@@ -144,14 +144,8 @@ King Shaka Airport Taxi - Since 2010`;
     console.log('Form submission started with data:', data);
     console.log('Form validation errors:', form.formState.errors);
     
-    // Add estimated price (required by schema)
-    const bookingData = {
-      ...data,
-      estimatedPrice: 500 // Default price - will be confirmed via WhatsApp
-    };
-    
-    console.log('Booking data with price:', bookingData);
-    bookingMutation.mutate(bookingData);
+    console.log('Booking data:', data);
+    bookingMutation.mutate(data);
   };
 
 

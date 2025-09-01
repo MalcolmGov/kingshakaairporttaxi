@@ -57,7 +57,7 @@ async function sendEmailNotification(booking: any) {
           </div>
           
           <div style="background-color: #dcfce7; border: 2px solid #16a34a; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <p style="margin: 0; font-size: 18px; color: #16a34a;"><strong>Estimated Price: R${booking.estimatedPrice}</strong></p>
+            <p style="margin: 0; font-size: 18px; color: #16a34a;"><strong>Price: To be confirmed via WhatsApp</strong></p>
             <p style="margin: 5px 0 0 0; color: #16a34a;">Booking ID: ${booking.id}</p>
           </div>
           
@@ -71,8 +71,8 @@ async function sendEmailNotification(booking: any) {
     const msg = {
       to: ['info@kingshakaairporttaxi.co.za', 'malcolmgov24@gmail.com'],
       from: 'bookings@kingshakaairporttaxi.co.za', // This should be a verified sender
-      subject: `New Booking Request - ${booking.customerName} (R${booking.estimatedPrice})`,
-      text: `NEW BOOKING REQUEST\n\nCustomer: ${booking.customerName}\nPhone: ${booking.customerPhone}\n\nPickup: ${booking.pickup}\nDestination: ${booking.destination}\n\nDate: ${new Date(booking.date).toLocaleDateString('en-ZA')}\nTime: ${booking.time}\nPassengers: ${booking.passengers}\nVehicle: ${booking.vehicleType || 'Any available'}\n\nEstimated Price: R${booking.estimatedPrice}\nBooking ID: ${booking.id}\n\nPlease confirm this booking with the customer.`,
+      subject: `New Booking Request - ${booking.customerName}`,
+      text: `NEW BOOKING REQUEST\n\nCustomer: ${booking.customerName}\nPhone: ${booking.customerPhone}\n\nPickup: ${booking.pickup}\nDestination: ${booking.destination}\n\nDate: ${new Date(booking.date).toLocaleDateString('en-ZA')}\nTime: ${booking.time}\nPassengers: ${booking.passengers}\nVehicle: ${booking.vehicleType || 'Any available'}\n\nPrice: To be confirmed via WhatsApp\nBooking ID: ${booking.id}\n\nPlease confirm this booking with the customer.`,
       html: htmlContent,
     };
 

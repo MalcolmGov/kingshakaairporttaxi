@@ -19,7 +19,6 @@ export const bookings = pgTable("bookings", {
   vehicleType: text("vehicle_type"),
   contactNumber: text("contact_number").notNull(),
   name: text("name").notNull(),
-  estimatedPrice: integer("estimated_price").notNull(),
   status: text("status").notNull().default("pending"),
   isReturnTrip: text("is_return_trip").default("false"),
   returnDate: text("return_date"),
