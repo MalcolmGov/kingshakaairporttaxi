@@ -61,9 +61,6 @@ export default function Header() {
             <Link href="/team" className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-team">
               Our Team
             </Link>
-            <button onClick={() => navigateToSection('reviews')} className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-reviews">
-              Reviews
-            </button>
             <button onClick={() => navigateToSection('contact')} className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-contact">
               Contact
             </button>
@@ -105,9 +102,6 @@ export default function Header() {
                 <Link href="/team" className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-team">
                   Our Team
                 </Link>
-                <button onClick={() => navigateToSection('reviews')} className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-reviews">
-                  Reviews
-                </button>
                 <button onClick={() => navigateToSection('contact')} className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-contact">
                   Contact
                 </button>
