@@ -52,14 +52,8 @@ export default function About() {
             <img 
               src={logoImage} 
               alt="King Shaka Airport Taxi Official Logo" 
-              className="rounded-xl shadow-2xl w-full mb-6 bg-white object-contain p-4"
+              className="rounded-xl shadow-2xl w-full bg-white object-contain p-4"
               data-testid="img-company-logo"
-            />
-            <img 
-              src={taxiServiceImage} 
-              alt="Professional taxi service with driver helping passenger with luggage" 
-              className="rounded-xl shadow-2xl w-full"
-              data-testid="img-taxi-service"
             />
           </div>
           
