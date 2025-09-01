@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Shield, Clock, Users, CheckCircle, Star } from "lucide-react";
+import logoImage from "../assets/logo.jpg";
 
 export default function About() {
   const features = [
@@ -48,10 +49,10 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div>
             <img 
-              src="https://kingshakaairporttaxi.co.za/wp-content/uploads/2023/09/airport-car-service.jpg" 
-              alt="King Shaka Airport Taxi services" 
-              className="rounded-xl shadow-2xl w-full mb-6"
-              data-testid="img-taxi-service"
+              src={logoImage} 
+              alt="King Shaka Airport Taxi Official Logo" 
+              className="rounded-xl shadow-2xl w-full mb-6 bg-gray-100 object-contain p-8"
+              data-testid="img-company-logo"
             />
             <img 
               src="https://kingshakaairporttaxi.co.za/wp-content/uploads/2023/09/shutterstock_627682721.jpg" 
