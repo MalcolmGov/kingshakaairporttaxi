@@ -11,7 +11,7 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { insertBookingSchema, type InsertBooking } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
-import { MapPin, Calendar, Clock, Users, Phone, CalendarCheck, Car } from "lucide-react";
+import { MapPin, Calendar, Clock, Users, Phone, CalendarCheck, Car, MessageCircle } from "lucide-react";
 
 const bookingFormSchema = insertBookingSchema.extend({
   date: insertBookingSchema.shape.date.refine((date) => {
@@ -24,6 +24,8 @@ const bookingFormSchema = insertBookingSchema.extend({
 
 export default function BookingForm() {
   const [estimatedPrice, setEstimatedPrice] = useState<number | null>(null);
+  const [showWhatsAppConfirmation, setShowWhatsAppConfirmation] = useState(false);
+  const [lastBookingData, setLastBookingData] = useState<InsertBooking | null>(null);
   const { toast } = useToast();
 
   const form = useForm<InsertBooking>({
@@ -62,13 +64,47 @@ export default function BookingForm() {
     },
   });
 
+  // WhatsApp message formatting function
+  const formatBookingMessage = (data: InsertBooking) => {
+    return `🚗 TAXI BOOKING REQUEST
+
+📋 Booking Details:
+- Name: ${data.name}
+- Phone: ${data.contactNumber}
+
+🗺️ Journey:
+- From: ${data.pickup}
+- To: ${data.destination}
+- Date: ${data.date}
+- Time: ${data.time}
+- Passengers: ${data.passengers}
+- Vehicle: ${data.vehicleType}
+
+💰 Estimated Fare: R${data.estimatedPrice}
+
+Please confirm availability and exact pickup time.
+
+King Shaka Airport Taxi - Since 2010 🚗✨`;
+  };
+
+  const handleWhatsAppBooking = () => {
+    if (!lastBookingData) return;
+    
+    const phoneNumber = "+27833423975"; // Primary contact number
+    const message = formatBookingMessage(lastBookingData);
+    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   // Booking submission mutation
   const bookingMutation = useMutation({
     mutationFn: async (data: InsertBooking) => {
       const response = await apiRequest("POST", "/api/bookings", data);
       return response.json();
     },
-    onSuccess: () => {
+    onSuccess: (_, variables) => {
+      setLastBookingData(variables);
+      setShowWhatsAppConfirmation(true);
       toast({
         title: "Booking Confirmed!",
         description: "We'll contact you shortly to confirm your ride details.",
@@ -352,6 +388,40 @@ export default function BookingForm() {
                       <CalendarCheck className="w-5 h-5 mr-2" />
                       {bookingMutation.isPending ? "Processing..." : "Confirm Booking"}
                     </Button>
+
+                    {/* WhatsApp Confirmation Section */}
+                    {showWhatsAppConfirmation && (
+                      <div className="bg-green-50 border border-green-200 rounded-lg p-6 space-y-4" data-testid="whatsapp-confirmation">
+                        <div className="text-center">
+                          <h3 className="text-lg font-semibold text-green-800 mb-2" data-testid="text-booking-success">
+                            🎉 Booking Submitted Successfully!
+                          </h3>
+                          <p className="text-green-700 mb-4" data-testid="text-whatsapp-instruction">
+                            Click below to send your booking details via WhatsApp for instant confirmation:
+                          </p>
+                        </div>
+                        
+                        <Button 
+                          onClick={handleWhatsAppBooking}
+                          className="w-full bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200 min-h-[44px]"
+                          data-testid="button-whatsapp-booking"
+                        >
+                          <MessageCircle className="w-5 h-5 mr-2" />
+                          📱 Send Booking to WhatsApp
+                        </Button>
+                        
+                        <div className="text-center">
+                          <Button 
+                            variant="ghost"
+                            onClick={() => setShowWhatsAppConfirmation(false)}
+                            className="text-muted-foreground hover:text-foreground"
+                            data-testid="button-close-confirmation"
+                          >
+                            Close
+                          </Button>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </form>
               </Form>
