@@ -74,7 +74,7 @@ export default function Header() {
             </a>
             <Button 
               onClick={() => navigateToSection('booking')} 
-              className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200"
+              className="bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 text-black font-semibold hover:from-yellow-300 hover:via-orange-300 hover:to-yellow-400 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200 border-2 border-yellow-300"
               data-testid="button-book-now"
             >
               Book Now
