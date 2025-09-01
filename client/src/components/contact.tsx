@@ -89,15 +89,19 @@ export default function Contact() {
                 </div>
               </a>
               
-              <div className="flex items-center bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-4" data-testid="contact-email">
+              <a 
+                href="mailto:info@kingshakaairporttaxi.co.za"
+                className="flex items-center bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-4 hover:bg-primary-foreground/20 transition-colors group"
+                data-testid="link-contact-email"
+              >
                 <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mr-4">
                   <Mail className="text-primary-foreground w-6 h-6" />
                 </div>
                 <div>
                   <p className="text-primary-foreground font-semibold">Email Us</p>
-                  <p className="text-primary-foreground/80">info@kingshakaairporttaxi.co.za</p>
+                  <p className="text-primary-foreground/80 group-hover:text-primary-foreground transition-colors">info@kingshakaairporttaxi.co.za</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
           
