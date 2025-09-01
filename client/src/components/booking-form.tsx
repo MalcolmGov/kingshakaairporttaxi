@@ -76,17 +76,14 @@ export default function BookingForm() {
     }
     
     const primaryNumber = "27833423975";
+    const message = formatBookingMessage(lastBookingData);
     
-    // Create a very simple message to test
-    const testMessage = `Taxi booking: ${lastBookingData.name} from ${lastBookingData.pickup} to ${lastBookingData.destination}`;
-    console.log('Test message:', testMessage);
+    // Force WhatsApp Web to ensure pre-filled messages work
+    const whatsappWebUrl = `https://web.whatsapp.com/send?phone=${primaryNumber}&text=${encodeURIComponent(message)}`;
+    console.log('WhatsApp Web URL:', whatsappWebUrl);
     
-    // Create URL without any special characters
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=${primaryNumber}&text=${encodeURIComponent(testMessage)}`;
-    console.log('WhatsApp URL:', whatsappUrl);
-    
-    // Open WhatsApp
-    window.open(whatsappUrl, '_blank');
+    // Open WhatsApp Web specifically
+    window.open(whatsappWebUrl, '_blank');
   };
 
   // Booking submission mutation
