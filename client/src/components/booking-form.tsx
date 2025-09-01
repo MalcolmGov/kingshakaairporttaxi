@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -11,7 +11,7 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { insertBookingSchema, type InsertBooking } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
-import { MapPin, Calendar, Clock, Users, Phone, CalendarCheck } from "lucide-react";
+import { MapPin, Calendar, Clock, Users, Phone, CalendarCheck, Car } from "lucide-react";
 
 const bookingFormSchema = insertBookingSchema.extend({
   date: insertBookingSchema.shape.date.refine((date) => {
@@ -34,11 +34,21 @@ export default function BookingForm() {
       date: "",
       time: "",
       passengers: 1,
+      vehicleType: "",
       contactNumber: "",
       name: "",
       estimatedPrice: 0,
     },
   });
+
+  // Check for pre-selected vehicle from fleet section
+  useEffect(() => {
+    const selectedVehicle = localStorage.getItem('selectedVehicle');
+    if (selectedVehicle) {
+      form.setValue('vehicleType', selectedVehicle);
+      localStorage.removeItem('selectedVehicle');
+    }
+  }, [form]);
 
   // Price calculation mutation
   const calculatePriceMutation = useMutation({
@@ -229,6 +239,35 @@ export default function BookingForm() {
                             <SelectItem value="2">2 Passengers</SelectItem>
                             <SelectItem value="3">3 Passengers</SelectItem>
                             <SelectItem value="4">4+ Passengers</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="vehicleType"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Vehicle Type</FormLabel>
+                        <Select onValueChange={field.onChange} value={field.value || ""}>
+                          <FormControl>
+                            <div className="relative">
+                              <Car className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4 z-10" />
+                              <SelectTrigger className="pl-10 min-h-[44px]" data-testid="select-vehicle-type">
+                                <SelectValue placeholder="Select vehicle type" />
+                              </SelectTrigger>
+                            </div>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="Hatchbacks">Hatchbacks (3 Seater)</SelectItem>
+                            <SelectItem value="Sedan">Sedan (3 Seater)</SelectItem>
+                            <SelectItem value="SUV">SUV (3 Seater)</SelectItem>
+                            <SelectItem value="Luxury Cabs">Luxury Cabs (3 Seater)</SelectItem>
+                            <SelectItem value="Mini Bus">Mini Bus (8 Seater)</SelectItem>
+                            <SelectItem value="Vehicle of Choice">Vehicle of Choice (Personalized)</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />

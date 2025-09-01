@@ -16,6 +16,7 @@ export const bookings = pgTable("bookings", {
   date: text("date").notNull(),
   time: text("time").notNull(),
   passengers: integer("passengers").notNull(),
+  vehicleType: text("vehicle_type"),
   contactNumber: text("contact_number").notNull(),
   name: text("name").notNull(),
   estimatedPrice: integer("estimated_price").notNull(),

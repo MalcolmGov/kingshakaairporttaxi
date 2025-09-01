@@ -1,4 +1,16 @@
+import { Button } from "@/components/ui/button";
+import { Car } from "lucide-react";
+
 export default function VehicleShowcase() {
+  const scrollToBookingWithVehicle = (vehicleName: string) => {
+    // Store selected vehicle in localStorage for the booking form
+    localStorage.setItem('selectedVehicle', vehicleName);
+    
+    const element = document.getElementById('booking');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   const vehicles = [
     {
       name: "Hatchbacks",
@@ -63,9 +75,18 @@ export default function VehicleShowcase() {
                 <h3 className="font-semibold text-card-foreground text-lg mb-1" data-testid={`text-vehicle-name-${index}`}>
                   {vehicle.name}
                 </h3>
-                <p className="text-muted-foreground text-sm" data-testid={`text-vehicle-capacity-${index}`}>
+                <p className="text-muted-foreground text-sm mb-3" data-testid={`text-vehicle-capacity-${index}`}>
                   {vehicle.capacity}
                 </p>
+                <Button 
+                  onClick={() => scrollToBookingWithVehicle(vehicle.name)}
+                  size="sm"
+                  className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
+                  data-testid={`button-book-vehicle-${index}`}
+                >
+                  <Car className="w-4 h-4 mr-2" />
+                  Book This Vehicle
+                </Button>
               </div>
               <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <div className="text-center text-primary-foreground">
