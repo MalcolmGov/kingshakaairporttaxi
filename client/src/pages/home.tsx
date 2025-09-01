@@ -13,17 +13,7 @@ import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <>
-      {/* Meta tags for SEO */}
-      <head>
-        <title>King Shaka Airport Taxi - Reliable & Affordable Rides in KZN | Since 2010</title>
-        <meta name="description" content="Premium taxi service at King Shaka Airport. Over a decade of safe, reliable transportation throughout KwaZulu-Natal. Book your ride today!" />
-        <meta property="og:title" content="King Shaka Airport Taxi - Reliable Transportation Since 2010" />
-        <meta property="og:description" content="Professional taxi service with zero safety incidents. Serving King Shaka Airport and KwaZulu-Natal with pride since 2010." />
-        <meta property="og:type" content="website" />
-      </head>
-      
-      <div className="min-h-screen">
+    <div className="min-h-screen">
         <Header />
         <Hero />
         <Services />
@@ -37,6 +27,5 @@ export default function Home() {
         <Contact />
         <Footer />
       </div>
-    </>
   );
 }
