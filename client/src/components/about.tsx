@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Shield, Clock, Users, CheckCircle, Star } from "lucide-react";
 import logoImage from "../assets/king-shaka-logo.png";
-import taxiServiceImage from "../assets/taxi-service-about.png";
+import aboutLayoutImage from "../assets/about-layout-image.png";
 
 export default function About() {
   const features = [
@@ -52,8 +52,14 @@ export default function About() {
             <img 
               src={logoImage} 
               alt="King Shaka Airport Taxi Official Logo" 
-              className="rounded-xl shadow-2xl w-full bg-white object-contain p-4"
+              className="rounded-xl shadow-2xl w-full mb-6 bg-white object-contain p-4"
               data-testid="img-company-logo"
+            />
+            <img 
+              src={aboutLayoutImage} 
+              alt="King Shaka Airport Taxi about section layout" 
+              className="rounded-xl shadow-2xl w-full"
+              data-testid="img-about-layout"
             />
           </div>
           
