@@ -8,8 +8,8 @@ export default function ReviewRequest() {
   const { toast } = useToast();
   const [copied, setCopied] = useState(false);
 
-  // Google Business Profile review link
-  const reviewLink = "https://g.page/r/CQoUqY8j_R2mEAg/review";
+  // Google Business Profile review link - using Maps search for King Shaka Airport Taxi
+  const reviewLink = "https://www.google.com/maps/search/King+Shaka+Airport+Taxi+KwaZulu+Natal/@-29.6144,31.1197,15z";
   
   // QR code for the review link (using QR Server API)
   const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(reviewLink)}`;
@@ -33,7 +33,7 @@ export default function ReviewRequest() {
   };
 
   const shareViaWhatsApp = () => {
-    const message = `Hi! Thank you for choosing King Shaka Airport Taxi. If you enjoyed your ride, we'd appreciate a quick review: ${reviewLink}`;
+    const message = `Hi! Thank you for choosing King Shaka Airport Taxi. If you enjoyed your ride, please search for "King Shaka Airport Taxi" on Google Maps and leave us a 5-star review! Here's the direct link: ${reviewLink}`;
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
