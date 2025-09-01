@@ -26,7 +26,7 @@ export default function Hero() {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }} data-testid="text-hero-title">
             Professional King Shaka Airport Taxi Service{" "}
-            <span className="text-accent drop-shadow-lg">Since 2010</span>
+            <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent font-bold drop-shadow-lg">Since 2010</span>
           </h1>
           
           <p className="text-xl sm:text-2xl text-white mb-8 lg:mb-12 max-w-3xl mx-auto leading-relaxed" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }} data-testid="text-hero-subtitle">
