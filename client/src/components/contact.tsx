@@ -54,10 +54,10 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground mb-6" data-testid="text-contact-title">
-              Ready to Travel?
+              Contact King Shaka Airport Taxi
             </h2>
             <p className="text-xl text-primary-foreground/90 mb-8 leading-relaxed" data-testid="text-contact-description">
-              Contact us today for reliable, professional transportation throughout KwaZulu-Natal. We're here 24/7 to serve you.
+              24/7 professional airport transfer service throughout KwaZulu-Natal. Call, WhatsApp, or book online for instant quotes. Licensed drivers, fixed rates, zero safety incidents since 2010.
             </p>
             
             <div className="space-y-6">

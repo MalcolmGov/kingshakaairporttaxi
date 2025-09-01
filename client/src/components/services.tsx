@@ -4,23 +4,23 @@ export default function Services() {
   const services = [
     {
       icon: <Plane className="text-primary-foreground w-6 h-6" />,
-      title: "Airport Transfers",
-      features: ["Fixed-price rides", "Professional drivers", "24/7 availability"]
+      title: "King Shaka Airport Transfers",
+      features: ["Fixed-price airport rides", "Licensed professional drivers", "24/7 airport availability"]
     },
     {
       icon: <Building2 className="text-primary-foreground w-6 h-6" />,
-      title: "City Transport", 
-      features: ["Throughout KZN", "Hotels & malls", "Anywhere in SA"]
+      title: "Durban City Transport", 
+      features: ["Throughout KZN destinations", "Hotels & Gateway mall", "Umhlanga & Ballito routes"]
     },
     {
       icon: <Briefcase className="text-primary-foreground w-6 h-6" />,
-      title: "Corporate Solutions",
-      features: ["Employee shuttles", "Executive transport", "Event logistics"]
+      title: "Corporate Transport KZN",
+      features: ["Business travel solutions", "Executive airport transport", "Corporate event logistics"]
     },
     {
       icon: <MapPin className="text-primary-foreground w-6 h-6" />,
-      title: "City Tours",
-      features: ["Local expert guides", "Hidden gems", "KZN expertise"]
+      title: "KZN Tourism & City Tours",
+      features: ["Local KZN expert guides", "Tourist destination transfers", "Durban sightseeing tours"]
     }
   ];
 
@@ -29,10 +29,10 @@ export default function Services() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4" data-testid="text-services-title">
-            Our Premium Services
+            Professional Airport Transfer Services KZN
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto" data-testid="text-services-subtitle">
-            Professional transportation solutions tailored to your needs throughout KwaZulu-Natal
+            Complete King Shaka Airport taxi solutions including corporate transport, city tours, and 24/7 reliable transfers throughout KwaZulu-Natal with licensed professional drivers
           </p>
         </div>
         

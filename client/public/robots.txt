@@ -1,0 +1,31 @@
+User-agent: *
+Allow: /
+
+# XML Sitemap
+Sitemap: https://kingshakaairporttaxi.co.za/sitemap.xml
+
+# Crawl Delay
+Crawl-delay: 1
+
+# Specific Directives for Better SEO
+Allow: /team
+Allow: /services
+Allow: /about
+Allow: /contact
+Allow: /booking
+
+# Block unnecessary pages
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /*?*
+
+# Allow important assets
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$

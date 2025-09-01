@@ -120,10 +120,10 @@ export default function BookingForm() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground mb-4" data-testid="text-booking-title">
-              Book Your Ride
+              Book King Shaka Airport Taxi Online
             </h2>
             <p className="text-xl text-primary-foreground/90" data-testid="text-booking-subtitle">
-              Quick and easy booking with instant price calculation
+              Instant quotes for airport transfers. Fixed prices, professional drivers, 24/7 availability throughout KZN
             </p>
           </div>
           

@@ -42,19 +42,31 @@ export default function Footer() {
           
           {/* Quick Links */}
           <div data-testid="footer-quick-links">
-            <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
+            <h4 className="font-semibold text-lg mb-4">Airport Transfer Services</h4>
             <ul className="space-y-3">
-              <li><button onClick={() => scrollToSection('home')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-link-home">Home</button></li>
-              <li><button onClick={() => scrollToSection('services')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-link-services">Services</button></li>
-              <li><button onClick={() => scrollToSection('about')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-link-about">About Us</button></li>
-              <li><button onClick={() => scrollToSection('reviews')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-link-reviews">Reviews</button></li>
-              <li><button onClick={() => scrollToSection('contact')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-link-contact">Contact</button></li>
+              <li><button onClick={() => scrollToSection('services')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-link-services">King Shaka Airport Taxi</button></li>
+              <li><button onClick={() => scrollToSection('booking')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-link-booking">Book Airport Transfer</button></li>
+              <li><a href="/team" className="text-background/80 hover:text-accent transition-colors" data-testid="footer-link-team">Our Professional Team</a></li>
+              <li><button onClick={() => scrollToSection('reviews')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-link-reviews">Customer Reviews</button></li>
+              <li><button onClick={() => scrollToSection('contact')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-link-contact">Contact & WhatsApp</button></li>
+            </ul>
+          </div>
+          
+          {/* Popular Routes */}
+          <div data-testid="footer-popular-routes">
+            <h4 className="font-semibold text-lg mb-4">Popular KZN Destinations</h4>
+            <ul className="space-y-3">
+              <li><button onClick={() => scrollToSection('booking')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-route-durban">Durban CBD Transfer</button></li>
+              <li><button onClick={() => scrollToSection('booking')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-route-umhlanga">Umhlanga Ridge</button></li>
+              <li><button onClick={() => scrollToSection('booking')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-route-ballito">Ballito Coastal</button></li>
+              <li><button onClick={() => scrollToSection('booking')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-route-pmb">Pietermaritzburg</button></li>
+              <li><button onClick={() => scrollToSection('booking')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-route-corporate">Corporate Transport</button></li>
             </ul>
           </div>
           
           {/* Contact Info */}
           <div data-testid="footer-contact-info">
-            <h4 className="font-semibold text-lg mb-4">Contact Info</h4>
+            <h4 className="font-semibold text-lg mb-4">24/7 Contact Info</h4>
             <div className="space-y-3">
               <div className="flex items-center" data-testid="footer-phone">
                 <Phone className="text-accent mr-3 w-4 h-4" />

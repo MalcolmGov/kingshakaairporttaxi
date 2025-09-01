@@ -30,10 +30,10 @@ export default function Safety() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6" data-testid="text-safety-title">
-              Your Safety is Our Priority
+              Safe & Licensed King Shaka Airport Taxi Service
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed" data-testid="text-safety-description">
-              With over a decade of experience serving KwaZulu-Natal, we've built our reputation on trust, safety, and exceptional service. Your peace of mind is guaranteed.
+              With over 14 years serving KwaZulu-Natal airport transfers, we guarantee safe transport versus illegal operators and unreliable ride-sharing services. Licensed professional drivers, zero safety incidents, and complete peace of mind for your journey.
             </p>
             
             <div className="grid sm:grid-cols-2 gap-6">

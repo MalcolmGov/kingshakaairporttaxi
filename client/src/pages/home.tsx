@@ -7,6 +7,7 @@ import About from "@/components/about";
 import BookingForm from "@/components/booking-form";
 import VehicleShowcase from "@/components/vehicle-showcase";
 import KznDestinations from "@/components/kzn-destinations";
+import PopularRoutes from "@/components/popular-routes";
 import FAQ from "@/components/faq";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
@@ -22,6 +23,7 @@ export default function Home() {
         <About />
         <BookingForm />
         <VehicleShowcase />
+        <PopularRoutes />
         <KznDestinations />
         <FAQ />
         <Contact />

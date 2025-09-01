@@ -55,10 +55,10 @@ export default function VehicleShowcase() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4" data-testid="text-vehicles-title">
-            Our Professional Fleet
+            King Shaka Airport Taxi Fleet
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto" data-testid="text-vehicles-subtitle">
-            Clean, comfortable, and well-maintained vehicles for your peace of mind
+            Professional airport transfer vehicles serving Durban, Umhlanga, Ballito and all KZN destinations. Clean, comfortable, and regularly serviced for optimal safety and reliability.
           </p>
         </div>
         

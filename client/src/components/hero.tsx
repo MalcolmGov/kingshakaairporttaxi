@@ -25,12 +25,12 @@ export default function Hero() {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }} data-testid="text-hero-title">
-            Reliable and Affordable Taxi Service at{" "}
-            <span className="text-accent drop-shadow-lg">King Shaka Airport</span>
+            Professional King Shaka Airport Taxi Service{" "}
+            <span className="text-accent drop-shadow-lg">Since 2010</span>
           </h1>
           
           <p className="text-xl sm:text-2xl text-white mb-8 lg:mb-12 max-w-3xl mx-auto leading-relaxed" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }} data-testid="text-hero-subtitle">
-            Making Your Travels Simpler and Stress-Free - Over a Decade of Safe, Professional Service
+            Reliable Airport Transfers & Transport throughout KwaZulu-Natal. Licensed drivers, 24/7 availability, competitive rates. Your trusted Durban airport taxi partner.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">

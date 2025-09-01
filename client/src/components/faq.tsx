@@ -4,28 +4,28 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export default function FAQ() {
   const faqs = [
     {
-      question: "How do I book a ride?",
-      answer: "You can book through our online form, call us directly, or send us a WhatsApp message. We offer instant price calculations and confirmation."
+      question: "How much does a taxi cost from King Shaka Airport to Durban CBD?",
+      answer: "Our fixed-price airport transfers start from competitive rates with no surge pricing. Use our online booking form for instant price calculations, or call +27 83 342 3975 for immediate quotes."
     },
     {
-      question: "What areas do you serve?",
-      answer: "We serve King Shaka International Airport and all areas throughout KwaZulu-Natal, including Durban, Pietermaritzburg, and beyond. We can travel anywhere in South Africa."
+      question: "What areas do you serve from King Shaka Airport?",
+      answer: "We provide airport transfers throughout KwaZulu-Natal including Durban CBD, Umhlanga, Ballito, Gateway Mall, Pietermaritzburg, and all KZN destinations. Professional transport anywhere in South Africa."
     },
     {
-      question: "Are your rates fixed?",
-      answer: "Yes, we offer fixed-price rates with no surge pricing or hidden fees. You'll know the exact cost upfront with our instant price calculator."
+      question: "Are your airport taxi rates fixed?",
+      answer: "Yes, we offer transparent fixed-price airport transfers with no surge pricing or hidden fees. Book online for instant price calculations or call for immediate quotes."
     },
     {
-      question: "What safety measures do you have in place?",
-      answer: "All our drivers are licensed professionals with over a decade of experience. We maintain a zero safety incident record and provide guaranteed safe transport for you and your loved ones."
+      question: "Why choose King Shaka Airport Taxi over ride-sharing apps?",
+      answer: "Licensed professional drivers with 14+ years experience, zero safety incidents, guaranteed availability, fixed rates, and local KZN expertise. Safe alternative to illegal operators and unreliable ride-sharing services."
     },
     {
-      question: "Do you operate 24/7?",
-      answer: "Yes, we provide 24/7 service for airport transfers and emergency transportation. Our drivers are always available to serve you."
+      question: "Do you operate 24/7 from King Shaka Airport?",
+      answer: "Yes, we provide 24/7 airport taxi service with professional drivers always available for transfers, corporate transport, and emergency transportation throughout KZN."
     },
     {
-      question: "Can you provide corporate transportation?",
-      answer: "Absolutely! We offer corporate solutions including employee shuttles, executive transportation, and event logistics. Contact us for customized corporate packages."
+      question: "Can you provide corporate transport from King Shaka Airport?",
+      answer: "Absolutely! We specialize in corporate airport transfers, executive transport, employee shuttles, and business event logistics. Contact us for customized corporate transport packages."
     }
   ];
 
@@ -35,10 +35,10 @@ export default function FAQ() {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4" data-testid="text-faq-title">
-              Frequently Asked Questions
+              King Shaka Airport Taxi FAQ
             </h2>
             <p className="text-xl text-muted-foreground" data-testid="text-faq-subtitle">
-              Everything you need to know about our service
+              Common questions about our professional airport transfer service, booking process, and KZN transport solutions
             </p>
           </div>
           

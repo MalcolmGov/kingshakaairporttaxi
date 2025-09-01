@@ -27,10 +27,10 @@ export default function Reviews() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4" data-testid="text-reviews-title">
-            What Our Customers Say
+            Best King Shaka Airport Taxi Reviews
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto" data-testid="text-reviews-subtitle">
-            Trusted by thousands of travelers throughout KwaZulu-Natal
+            5-star rated airport taxi service trusted by thousands of travelers. Read real customer experiences with our professional Durban airport transfer service.
           </p>
         </div>
         
