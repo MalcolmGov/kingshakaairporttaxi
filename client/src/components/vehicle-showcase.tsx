@@ -53,16 +53,16 @@ export default function VehicleShowcase() {
   return (
     <section className="py-16 lg:py-24 bg-background" data-testid="section-vehicles">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4" data-testid="text-vehicles-title">
+        <div className="text-center mb-12 sm:mb-16 px-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3 sm:mb-4" data-testid="text-vehicles-title">
             King Shaka Airport Taxi Fleet
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto" data-testid="text-vehicles-subtitle">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto" data-testid="text-vehicles-subtitle">
             Professional airport transfer vehicles serving Durban, Umhlanga, Ballito and all KZN destinations. Clean, comfortable, and regularly serviced for optimal safety and reliability.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {vehicles.map((vehicle, index) => (
             <div key={index} className="group relative overflow-hidden rounded-xl shadow-lg bg-card border border-border" data-testid={`card-vehicle-${index}`}>
               <img 
@@ -71,8 +71,8 @@ export default function VehicleShowcase() {
                 className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 data-testid={`img-vehicle-${index}`}
               />
-              <div className="relative z-10 p-4">
-                <h3 className="font-semibold text-card-foreground text-lg mb-1" data-testid={`text-vehicle-name-${index}`}>
+              <div className="relative z-10 p-3 sm:p-4">
+                <h3 className="font-semibold text-card-foreground text-base sm:text-lg mb-1" data-testid={`text-vehicle-name-${index}`}>
                   {vehicle.name}
                 </h3>
                 <p className="text-muted-foreground text-sm mb-3" data-testid={`text-vehicle-capacity-${index}`}>

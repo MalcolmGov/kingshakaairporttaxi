@@ -45,7 +45,7 @@ export default function About() {
   return (
     <section id="about" className="py-16 lg:py-24 bg-background" data-testid="section-about">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div>
             <img 
               src="https://kingshakaairporttaxi.co.za/wp-content/uploads/2023/09/airport-car-service.jpg" 
@@ -67,19 +67,19 @@ export default function About() {
               Serving with Pride Since 2010
             </div>
             
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6" data-testid="text-about-title">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4 sm:mb-6" data-testid="text-about-title">
               About King Shaka Airport Taxi
             </h2>
             
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed" data-testid="text-about-description">
+            <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6 leading-relaxed" data-testid="text-about-description">
               King Shaka Airport Taxi is a locally operated business that possesses an extensive fleet of commercial vehicles to meet your diverse transportation requirements from airport transfers to corporate travels and sightseeing tours.
             </p>
 
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed" data-testid="text-about-mission">
+            <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6 leading-relaxed" data-testid="text-about-mission">
               We commit ourselves to delivering the service you deserve and not merely the one you need. With various models of cars and cabs on our fleet we can deliver on just about any ground transportation requirements for any number of passengers.
             </p>
 
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed" data-testid="text-about-safety">
+            <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed" data-testid="text-about-safety">
               Due to the high volume of criminal activities with illegal operators and E-Hailing services, we are here to guarantee your safety as well as the safety of your loved ones during our services.
             </p>
             

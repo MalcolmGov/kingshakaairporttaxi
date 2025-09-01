@@ -51,16 +51,16 @@ export default function Contact() {
   return (
     <section id="contact" className="py-16 lg:py-24 gradient-bg" data-testid="section-contact">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground mb-6" data-testid="text-contact-title">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-foreground mb-4 sm:mb-6 px-4 sm:px-0" data-testid="text-contact-title">
               Contact King Shaka Airport Taxi
             </h2>
-            <p className="text-xl text-primary-foreground/90 mb-8 leading-relaxed" data-testid="text-contact-description">
+            <p className="text-lg sm:text-xl text-primary-foreground/90 mb-6 sm:mb-8 leading-relaxed px-4 sm:px-0" data-testid="text-contact-description">
               24/7 professional airport transfer service throughout KwaZulu-Natal. Call, WhatsApp, or book online for instant quotes. Licensed drivers, fixed rates, zero safety incidents since 2010.
             </p>
             
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6 px-4 sm:px-0">
               <a 
                 href="tel:+27833423975" 
                 className="flex items-center bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-4 hover:bg-primary-foreground/20 transition-colors group"
@@ -102,8 +102,8 @@ export default function Contact() {
           </div>
           
           <Card className="shadow-2xl" data-testid="card-contact-form">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-card-foreground mb-6" data-testid="text-contact-form-title">
+            <CardContent className="p-4 sm:p-6 lg:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-card-foreground mb-4 sm:mb-6" data-testid="text-contact-form-title">
                 Quick Contact Form
               </h3>
               <Form {...form}>

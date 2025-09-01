@@ -33,11 +33,11 @@ export default function FAQ() {
     <section className="py-16 lg:py-24 bg-background" data-testid="section-faq">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4" data-testid="text-faq-title">
+          <div className="text-center mb-12 sm:mb-16 px-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3 sm:mb-4" data-testid="text-faq-title">
               King Shaka Airport Taxi FAQ
             </h2>
-            <p className="text-xl text-muted-foreground" data-testid="text-faq-subtitle">
+            <p className="text-lg sm:text-xl text-muted-foreground" data-testid="text-faq-subtitle">
               Common questions about our professional airport transfer service, booking process, and KZN transport solutions
             </p>
           </div>
@@ -45,10 +45,10 @@ export default function FAQ() {
           <Accordion type="single" collapsible className="space-y-4" data-testid="accordion-faq">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="bg-card border border-border rounded-lg" data-testid={`faq-item-${index}`}>
-                <AccordionTrigger className="px-6 py-4 hover:bg-muted transition-colors text-left" data-testid={`faq-trigger-${index}`}>
-                  <span className="font-semibold text-card-foreground">{faq.question}</span>
+                <AccordionTrigger className="px-4 sm:px-6 py-3 sm:py-4 hover:bg-muted transition-colors text-left" data-testid={`faq-trigger-${index}`}>
+                  <span className="font-semibold text-card-foreground text-sm sm:text-base">{faq.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4" data-testid={`faq-content-${index}`}>
+                <AccordionContent className="px-4 sm:px-6 pb-3 sm:pb-4" data-testid={`faq-content-${index}`}>
                   <p className="text-muted-foreground">{faq.answer}</p>
                 </AccordionContent>
               </AccordionItem>

@@ -171,24 +171,24 @@ King Shaka Airport Taxi - Since 2010`;
     <section id="booking" className="py-16 lg:py-24 gradient-bg" data-testid="section-booking">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground mb-4" data-testid="text-booking-title">
+          <div className="text-center mb-8 sm:mb-12 px-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-foreground mb-3 sm:mb-4" data-testid="text-booking-title">
               Book King Shaka Airport Taxi Online
             </h2>
-            <p className="text-xl text-primary-foreground/90" data-testid="text-booking-subtitle">
+            <p className="text-lg sm:text-xl text-primary-foreground/90" data-testid="text-booking-subtitle">
               Instant quotes for airport transfers. Fixed prices, professional drivers, 24/7 availability throughout KZN
             </p>
           </div>
           
           <Card className="shadow-2xl" data-testid="card-booking-form">
-            <CardContent className="p-8 lg:p-10">
+            <CardContent className="p-4 sm:p-6 lg:p-10">
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="grid md:grid-cols-2 gap-6">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <FormField
                     control={form.control}
                     name="pickup"
                     render={({ field }) => (
-                      <FormItem className="md:col-span-2 lg:col-span-1">
+                      <FormItem className="sm:col-span-2 lg:col-span-1">
                         <FormLabel>Pick-up Location</FormLabel>
                         <FormControl>
                           <div className="relative">
@@ -210,7 +210,7 @@ King Shaka Airport Taxi - Since 2010`;
                     control={form.control}
                     name="destination"
                     render={({ field }) => (
-                      <FormItem className="md:col-span-2 lg:col-span-1">
+                      <FormItem className="sm:col-span-2 lg:col-span-1">
                         <FormLabel>Destination</FormLabel>
                         <FormControl>
                           <div className="relative">

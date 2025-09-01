@@ -25,18 +25,18 @@ export default function Reviews() {
   return (
     <section id="reviews" className="py-16 lg:py-24 bg-muted" data-testid="section-reviews">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4" data-testid="text-reviews-title">
+        <div className="text-center mb-12 sm:mb-16 px-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3 sm:mb-4" data-testid="text-reviews-title">
             Best King Shaka Airport Taxi Reviews
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto" data-testid="text-reviews-subtitle">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto" data-testid="text-reviews-subtitle">
             5-star rated airport taxi service trusted by thousands of travelers. Read real customer experiences with our professional Durban airport transfer service.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="testimonial-card bg-card rounded-xl p-6 shadow-lg border border-border" data-testid={`card-testimonial-${index}`}>
+            <div key={index} className="testimonial-card bg-card rounded-xl p-4 sm:p-6 shadow-lg border border-border" data-testid={`card-testimonial-${index}`}>
               <div className="flex items-center mb-4">
                 <div className="flex text-accent" data-testid={`rating-stars-${index}`}>
                   {[...Array(5)].map((_, starIndex) => (

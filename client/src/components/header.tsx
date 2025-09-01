@@ -34,16 +34,16 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3" data-testid="logo-container">
+          <div className="flex items-center space-x-2 sm:space-x-3" data-testid="logo-container">
             <img 
               src={logoImage} 
               alt="King Shaka Airport Taxi Logo" 
-              className="h-10 lg:h-12 w-auto"
+              className="h-8 sm:h-10 lg:h-12 w-auto"
               data-testid="logo-image"
             />
             <div className="flex flex-col">
-              <span className="font-bold text-lg lg:text-xl bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 bg-clip-text text-transparent">King Shaka Airport Taxi</span>
-              <span className="text-xs lg:text-sm text-muted-foreground">Reliable & Affordable Rides in KZN</span>
+              <span className="font-bold text-sm sm:text-lg lg:text-xl bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 bg-clip-text text-transparent leading-tight">King Shaka Airport Taxi</span>
+              <span className="text-xs lg:text-sm text-muted-foreground hidden sm:block">Reliable & Affordable Rides in KZN</span>
             </div>
           </div>
 

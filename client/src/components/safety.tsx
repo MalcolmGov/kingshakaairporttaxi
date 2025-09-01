@@ -27,16 +27,16 @@ export default function Safety() {
   return (
     <section className="py-16 lg:py-24 bg-background" data-testid="section-safety">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6" data-testid="text-safety-title">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4 sm:mb-6 px-4 sm:px-0" data-testid="text-safety-title">
               Safe & Licensed King Shaka Airport Taxi Service
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed" data-testid="text-safety-description">
+            <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed px-4 sm:px-0" data-testid="text-safety-description">
               With over 14 years serving KwaZulu-Natal airport transfers, we guarantee safe transport versus illegal operators and unreliable ride-sharing services. Licensed professional drivers, zero safety incidents, and complete peace of mind for your journey.
             </p>
             
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 px-4 sm:px-0">
               {safetyFeatures.map((feature, index) => (
                 <div key={index} className="flex items-start space-x-3" data-testid={`safety-feature-${index}`}>
                   <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center flex-shrink-0">

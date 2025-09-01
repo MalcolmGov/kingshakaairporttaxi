@@ -23,16 +23,16 @@ export default function KznDestinations() {
   return (
     <section className="py-16 lg:py-24 bg-muted" data-testid="section-destinations">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4" data-testid="text-destinations-title">
+        <div className="text-center mb-12 sm:mb-16 px-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3 sm:mb-4" data-testid="text-destinations-title">
             KZN Tourist Transport & City Tours
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto" data-testid="text-destinations-subtitle">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto" data-testid="text-destinations-subtitle">
             Professional tourist transport to KwaZulu-Natal's top destinations. Expert local guides, airport pickup included, custom sightseeing tours from King Shaka Airport to Drakensberg, Durban beachfront, and safari adventures.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {destinations.map((destination, index) => (
             <div key={index} className="relative group overflow-hidden rounded-xl shadow-xl" data-testid={`card-destination-${index}`}>
               <img 
@@ -42,8 +42,8 @@ export default function KznDestinations() {
                 data-testid={`img-destination-${index}`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <div className="absolute bottom-6 left-6 text-white">
-                <h3 className="text-xl font-bold mb-2" data-testid={`text-destination-name-${index}`}>
+              <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 text-white">
+                <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2" data-testid={`text-destination-name-${index}`}>
                   {destination.name}
                 </h3>
                 <p className="text-white/90 text-sm" data-testid={`text-destination-description-${index}`}>

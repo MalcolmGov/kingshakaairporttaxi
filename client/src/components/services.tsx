@@ -36,7 +36,7 @@ export default function Services() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {services.map((service, index) => (
             <div key={index} className="group service-card bg-gradient-to-br from-white via-blue-50/30 to-white dark:from-gray-900 dark:via-blue-950/20 dark:to-gray-900 rounded-xl p-6 shadow-xl hover:shadow-2xl border border-blue-100 dark:border-blue-900/30 transition-all duration-300 hover:-translate-y-2 hover:scale-105" data-testid={`card-service-${index}`}>
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">

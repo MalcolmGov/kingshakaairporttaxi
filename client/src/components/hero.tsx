@@ -24,12 +24,12 @@ export default function Hero() {
       
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }} data-testid="text-hero-title">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight px-2" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }} data-testid="text-hero-title">
             Professional King Shaka Airport Taxi Service{" "}
             <span className="text-accent drop-shadow-lg">Since 2010</span>
           </h1>
           
-          <p className="text-xl sm:text-2xl text-white mb-8 lg:mb-12 max-w-3xl mx-auto leading-relaxed" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }} data-testid="text-hero-subtitle">
+          <p className="text-lg sm:text-xl lg:text-2xl text-white mb-6 sm:mb-8 lg:mb-12 max-w-3xl mx-auto leading-relaxed px-4" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }} data-testid="text-hero-subtitle">
             Reliable Airport Transfers & Transport throughout KwaZulu-Natal. Licensed drivers, 24/7 availability, competitive rates. Your trusted Durban airport taxi partner.
           </p>
           
@@ -54,17 +54,17 @@ export default function Hero() {
             </Button>
           </div>
           
-          <div className="mt-12 lg:mt-16 flex flex-col sm:flex-row justify-center items-center gap-8 text-white">
-            <div className="flex items-center" data-testid="feature-safety" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.7)' }}>
-              <Shield className="text-accent mr-2 w-5 h-5 drop-shadow-lg" />
+          <div className="mt-8 sm:mt-12 lg:mt-16 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 text-white px-4">
+            <div className="flex items-center text-sm sm:text-base" data-testid="feature-safety" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.7)' }}>
+              <Shield className="text-accent mr-2 w-4 h-4 sm:w-5 sm:h-5 drop-shadow-lg" />
               <span className="font-medium">Zero Safety Incidents</span>
             </div>
-            <div className="flex items-center" data-testid="feature-availability" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.7)' }}>
-              <Clock className="text-accent mr-2 w-5 h-5 drop-shadow-lg" />
+            <div className="flex items-center text-sm sm:text-base" data-testid="feature-availability" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.7)' }}>
+              <Clock className="text-accent mr-2 w-4 h-4 sm:w-5 sm:h-5 drop-shadow-lg" />
               <span className="font-medium">24/7 Availability</span>
             </div>
-            <div className="flex items-center" data-testid="feature-experience" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.7)' }}>
-              <Star className="text-accent mr-2 w-5 h-5 drop-shadow-lg" />
+            <div className="flex items-center text-sm sm:text-base" data-testid="feature-experience" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.7)' }}>
+              <Star className="text-accent mr-2 w-4 h-4 sm:w-5 sm:h-5 drop-shadow-lg" />
               <span className="font-medium">Serving Since 2010</span>
             </div>
           </div>
