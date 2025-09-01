@@ -172,10 +172,10 @@ King Shaka Airport Taxi - Since 2010`;
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8 sm:mb-12 px-4">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-foreground mb-3 sm:mb-4" data-testid="text-booking-title">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4" style={{ color: '#1f2937' }} data-testid="text-booking-title">
               Book King Shaka Airport Taxi Online
             </h2>
-            <p className="text-lg sm:text-xl text-primary-foreground/90" data-testid="text-booking-subtitle">
+            <p className="text-lg sm:text-xl" style={{ color: '#374151', fontWeight: '500' }} data-testid="text-booking-subtitle">
               Instant quotes for airport transfers. Fixed prices, professional drivers, 24/7 availability throughout KZN
             </p>
           </div>
