@@ -32,13 +32,13 @@ export default function Header() {
   return (
     <header className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50" data-testid="header-main">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 lg:h-20">
+        <div className="flex justify-between items-center h-20 lg:h-28">
           {/* Logo */}
           <div className="flex items-center space-x-2 sm:space-x-3" data-testid="logo-container">
             <img 
               src={logoImage} 
               alt="King Shaka Airport Taxi Logo" 
-              className="h-12 sm:h-14 lg:h-16 w-auto"
+              className="h-16 sm:h-20 lg:h-24 w-auto"
               data-testid="logo-image"
             />
             <div className="flex flex-col">
