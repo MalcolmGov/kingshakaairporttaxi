@@ -66,25 +66,14 @@ export default function BookingForm() {
 
   // WhatsApp message formatting function
   const formatBookingMessage = (data: InsertBooking) => {
-    return `TAXI BOOKING REQUEST
-
-Booking Details:
+    return `TAXI BOOKING
 Name: ${data.name}
-Phone: ${data.contactNumber}
-
-Journey:
 From: ${data.pickup}
 To: ${data.destination}
-Date: ${data.date}
-Time: ${data.time}
+Date: ${data.date} ${data.time}
 Passengers: ${data.passengers}
-Vehicle: ${data.vehicleType}
-
-Estimated Fare: R${data.estimatedPrice}
-
-Please confirm availability and pickup time.
-
-King Shaka Airport Taxi`;
+Price: R${data.estimatedPrice}
+Contact: ${data.contactNumber}`;
   };
 
   const handleWhatsAppBooking = () => {
@@ -93,17 +82,21 @@ King Shaka Airport Taxi`;
       return;
     }
     
-    const primaryNumber = "27833423975"; // Primary contact number (without +)
+    const primaryNumber = "27833423975";
     const message = formatBookingMessage(lastBookingData);
-    console.log('WhatsApp message:', message);
-    console.log('Phone number:', primaryNumber);
     
-    // Create WhatsApp URL with proper encoding
-    const whatsappUrl = `https://wa.me/${primaryNumber}?text=${encodeURIComponent(message)}`;
-    console.log('WhatsApp URL:', whatsappUrl);
+    // Try a simpler URL approach
+    const baseUrl = `https://wa.me/${primaryNumber}`;
+    const encodedMessage = encodeURIComponent(message);
+    const fullUrl = `${baseUrl}?text=${encodedMessage}`;
+    
+    console.log('Message length:', message.length);
+    console.log('Encoded message length:', encodedMessage.length);
+    console.log('Full URL length:', fullUrl.length);
+    console.log('Opening WhatsApp with URL:', fullUrl);
     
     // Open WhatsApp
-    window.open(whatsappUrl, '_blank');
+    window.open(fullUrl, '_blank');
   };
 
   // Booking submission mutation
