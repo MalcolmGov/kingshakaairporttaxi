@@ -11,7 +11,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden" data-testid="section-hero">
+    <section id="home" className="relative min-h-screen flex items-start sm:items-center justify-center overflow-hidden pt-20 sm:pt-0" data-testid="section-hero">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
