@@ -62,7 +62,7 @@ export default function Contact() {
             
             <div className="space-y-6">
               <a 
-                href="tel:+27123456789" 
+                href="tel:+27833423975" 
                 className="flex items-center bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-4 hover:bg-primary-foreground/20 transition-colors group"
                 data-testid="link-contact-phone"
               >
@@ -71,12 +71,12 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-primary-foreground font-semibold">Call Us Directly</p>
-                  <p className="text-primary-foreground/80">+27 123 456 789</p>
+                  <p className="text-primary-foreground/80">+27 83 342 3975</p>
                 </div>
               </a>
               
               <a 
-                href="https://wa.me/27123456789" 
+                href="https://wa.me/27833423975" 
                 className="flex items-center bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-4 hover:bg-primary-foreground/20 transition-colors group"
                 data-testid="link-contact-whatsapp"
               >

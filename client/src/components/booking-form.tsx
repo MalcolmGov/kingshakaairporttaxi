@@ -305,7 +305,7 @@ export default function BookingForm() {
                             <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
                             <Input 
                               type="tel" 
-                              placeholder="+27 123 456 789" 
+                              placeholder="+27 83 342 3975" 
                               className="pl-10 min-h-[44px]"
                               data-testid="input-contact"
                               {...field} 

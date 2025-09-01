@@ -34,7 +34,7 @@ export default function Footer() {
               <a href="#" className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary/80 transition-colors" data-testid="link-twitter">
                 <Twitter className="text-primary-foreground w-5 h-5" />
               </a>
-              <a href="https://wa.me/27123456789" className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors" data-testid="link-whatsapp">
+              <a href="https://wa.me/27833423975" className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors" data-testid="link-whatsapp">
                 <MessageCircle className="text-white w-5 h-5" />
               </a>
             </div>
@@ -58,7 +58,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center" data-testid="footer-phone">
                 <Phone className="text-accent mr-3 w-4 h-4" />
-                <span className="text-background/80">+27 123 456 789</span>
+                <span className="text-background/80">+27 83 342 3975</span>
               </div>
               <div className="flex items-center" data-testid="footer-email">
                 <Mail className="text-accent mr-3 w-4 h-4" />

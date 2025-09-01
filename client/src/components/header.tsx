@@ -50,9 +50,9 @@ export default function Header() {
 
           {/* Contact & CTA */}
           <div className="hidden lg:flex items-center space-x-4" data-testid="header-cta">
-            <a href="tel:+27123456789" className="text-primary font-semibold hover:text-primary/80 transition-colors flex items-center" data-testid="link-phone">
+            <a href="tel:+27833423975" className="text-primary font-semibold hover:text-primary/80 transition-colors flex items-center" data-testid="link-phone">
               <Phone className="w-4 h-4 mr-2" />
-              +27 123 456 789
+              +27 83 342 3975
             </a>
             <Button 
               onClick={() => scrollToSection('booking')} 
@@ -89,9 +89,9 @@ export default function Header() {
                 </button>
                 
                 <div className="pt-6 border-t border-border space-y-4">
-                  <a href="tel:+27123456789" className="flex items-center text-primary font-semibold text-lg" data-testid="mobile-link-phone">
+                  <a href="tel:+27833423975" className="flex items-center text-primary font-semibold text-lg" data-testid="mobile-link-phone">
                     <Phone className="w-5 h-5 mr-3" />
-                    +27 123 456 789
+                    +27 83 342 3975
                   </a>
                   <Button 
                     onClick={() => scrollToSection('booking')} 
