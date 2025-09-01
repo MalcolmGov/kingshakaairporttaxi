@@ -239,22 +239,21 @@ King Shaka Airport Taxi - Since 2010`;
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Passengers</FormLabel>
-                        <Select onValueChange={(value) => field.onChange(parseInt(value))} defaultValue={field.value?.toString()}>
-                          <FormControl>
-                            <div className="relative">
-                              <Users className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4 z-10" />
-                              <SelectTrigger className="pl-10 min-h-[44px]" data-testid="select-passengers">
-                                <SelectValue placeholder="Select passengers" />
-                              </SelectTrigger>
-                            </div>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="1">1 Passenger</SelectItem>
-                            <SelectItem value="2">2 Passengers</SelectItem>
-                            <SelectItem value="3">3 Passengers</SelectItem>
-                            <SelectItem value="4">4+ Passengers</SelectItem>
-                          </SelectContent>
-                        </Select>
+                        <FormControl>
+                          <div className="relative">
+                            <Users className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4 z-10" />
+                            <Input 
+                              type="number"
+                              min="1"
+                              max="50"
+                              placeholder="Enter number of passengers"
+                              className="pl-10 min-h-[44px]" 
+                              data-testid="input-passengers"
+                              value={field.value || ''}
+                              onChange={(e) => field.onChange(parseInt(e.target.value) || 1)}
+                            />
+                          </div>
+                        </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
