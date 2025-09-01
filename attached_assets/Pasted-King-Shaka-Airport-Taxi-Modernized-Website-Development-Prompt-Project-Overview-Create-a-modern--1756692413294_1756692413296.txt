@@ -1,0 +1,179 @@
+King Shaka Airport Taxi - Modernized Website Development Prompt
+Project Overview
+Create a modern, responsive website for King Shaka Airport Taxi, a premium taxi service operating in KwaZulu-Natal, South Africa since 2010. The website should maintain existing branding while implementing contemporary design principles and enhanced user experience.
+Brand Identity & Design Guidelines
+Company Information
+•	Business Name: King Shaka Airport Taxi
+•	Tagline: "Reliable & Affordable Rides in KZN"
+•	Established: 2010 (serving with pride since 2010)
+•	Location: KwaZulu-Natal, South Africa
+•	Primary Service Area: King Shaka International Airport and throughout KZN
+Color Scheme (maintain existing branding)
+•	Primary Colors: Professional blues and whites (corporate/trustworthy)
+•	Accent Colors: Gold/yellow highlights (taxi industry standard)
+•	Background: Clean whites with subtle greys
+•	Text: Dark greys/blacks for readability
+•	Call-to-Action: Prominent blues or golds
+Logo Requirements
+•	Maintain existing "King Shaka Airport Taxi" branding
+•	Incorporate airplane/taxi/transportation elements
+•	Professional, clean design
+•	Scalable for various screen sizes
+•	If logo redesign needed, use: airplane icon, taxi silhouette, or road elements
+Core Content Structure
+Header Section
+•	Logo positioned prominently (top-left)
+•	Navigation: Home | Services | About | Reviews | Contact | Book Now
+•	Phone number prominently displayed
+•	"Book Now" CTA button (prominent placement)
+Hero Section
+Headline: "Reliable and Affordable Taxi Service at King Shaka Airport"
+Subheadline: "Making Your Travels Simpler and Stress-Free - Over a Decade of Safe, Professional Service"
+CTA Buttons: "Book Your Ride" | "Call Now: [Phone Number]"
+Background: Professional image of clean taxi or King Shaka Airport
+Services Section
+1.	Airport Transfers
+o	Fixed-price rides to/from King Shaka Airport
+o	Professional, licensed drivers
+o	24/7 availability
+2.	City Transport
+o	Direct rides throughout KZN
+o	Hotels, malls, hospitals, events
+o	Anywhere in South Africa
+3.	Corporate Solutions
+o	Employee shuttles
+o	Executive transportation
+o	Event logistics
+4.	City Tours
+o	Local expert guides
+o	Discover hidden gems
+o	Insider knowledge of KZN
+Safety & Trust Section
+Headline: "Your Safety is Our Priority"
+Content: 
+- Licensed professional drivers
+- Over a decade of experience
+- Zero safety incidents
+- Response to illegal operators and E-hailing safety concerns
+- Guaranteed safe transport for you and your loved ones
+Customer Reviews Section
+Display existing testimonials:
+•	Friendly, accommodating service
+•	Excellent personality and professionalism
+•	Going above and beyond (helping to airport counter)
+•	Neat, tidy vehicles
+•	Warm, welcoming atmosphere
+About Section
+•	"Serving with pride since 2010"
+•	"Over a decade of experience with zero comebacks"
+•	"Delivering clients safely and timeously"
+•	"Expert knowledge of KZN"
+Technical Requirements
+Technology Stack
+•	Frontend: HTML5, CSS3, JavaScript (ES6+)
+•	Framework: React.js or Vue.js (recommended)
+•	Styling: Tailwind CSS or modern CSS frameworks
+•	Icons: Font Awesome or Lucide React
+•	Animations: Framer Motion or CSS animations
+Responsive Design
+•	Mobile-first approach
+•	Breakpoints: 320px, 768px, 1024px, 1440px
+•	Touch-friendly buttons (minimum 44px)
+•	Optimized images for different screen densities
+Performance Optimization
+•	Fast loading times (under 3 seconds)
+•	Optimized images (WebP format)
+•	Minified CSS/JS
+•	Lazy loading for images
+•	SEO optimized
+Features to Include
+1.	Online Booking Form
+o	Pick-up location
+o	Destination
+o	Date/time selection
+o	Passenger count
+o	Contact information
+o	Instant price calculator
+2.	Click-to-Call Functionality
+o	Prominent phone numbers
+o	WhatsApp integration
+o	Contact form
+3.	Interactive Map
+o	Service area coverage
+o	King Shaka Airport location
+o	Popular destinations
+4.	Testimonials Carousel
+o	Auto-rotating customer reviews
+o	Star ratings
+o	Customer photos (if available)
+5.	FAQ Section
+o	Common questions about booking
+o	Pricing information
+o	Safety measures
+o	Service areas
+Modern Design Elements
+Layout & Typography
+•	Clean, minimal design
+•	Generous white space
+•	Professional typography (Google Fonts: Inter, Open Sans, or Roboto)
+•	Clear hierarchy with proper heading levels
+Interactive Elements
+•	Hover effects on buttons
+•	Smooth scrolling navigation
+•	Micro-animations for loading states
+•	Form validation with real-time feedback
+Visual Elements
+•	High-quality images of clean vehicles
+•	Professional driver photos
+•	King Shaka Airport imagery
+•	KZN landmarks/destinations
+Content Tone & Messaging
+•	Professional yet approachable
+•	Emphasis on safety and reliability
+•	Local expertise and knowledge
+•	Customer service excellence
+•	Trustworthy and established (since 2010)
+Footer Requirements
+•	Contact information
+•	Service areas
+•	Quick links
+•	Social media links
+•	Copyright: "© 2024 King Shaka Airport Taxi. All rights reserved."
+•	"Serving KZN with pride since 2010"
+SEO Considerations
+•	Meta descriptions for all pages
+•	Structured data markup
+•	Local SEO optimization
+•	Page titles with location keywords
+•	Alt text for all images
+Call-to-Action Strategy
+•	Primary CTA: "Book Your Ride Now"
+•	Secondary CTA: "Call Now" with phone number
+•	Emergency contact information
+•	WhatsApp booking option
+File Structure
+/src
+  /components
+    - Header.jsx
+    - Hero.jsx
+    - Services.jsx
+    - Reviews.jsx
+    - BookingForm.jsx
+    - Footer.jsx
+  /pages
+    - Home.jsx
+    - About.jsx
+    - Contact.jsx
+  /assets
+    - /images
+    - /icons
+  /styles
+    - main.css
+    - components.css
+Success Metrics
+•	Mobile responsiveness across all devices
+•	Fast loading speeds
+•	Clear conversion paths (booking/calling)
+•	Professional appearance maintaining brand trust
+•	Easy navigation and user experience
+Create a website that positions King Shaka Airport Taxi as the premier, safe, and reliable transportation choice for anyone traveling through KwaZulu-Natal, with particular emphasis on their decade-plus track record of excellent service.
