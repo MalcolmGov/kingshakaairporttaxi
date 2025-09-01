@@ -43,10 +43,10 @@ export default function ReviewRequest() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4" data-testid="text-review-title">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4" data-testid="text-review-title">
               Share Your Experience with King Shaka Airport Taxi
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto" data-testid="text-review-subtitle">
+            <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto" data-testid="text-review-subtitle">
               Help other travelers find our trusted taxi service. Your 5-star review helps us maintain our perfect safety record and excellent service reputation in KZN.
             </p>
           </div>
