@@ -144,7 +144,7 @@ export default function Gallery() {
             style={{ color: '#1f2937' }}
             data-testid="text-gallery-title"
           >
-            Our Professional Service Gallery
+            Professional Safari Tours
           </h2>
           <p 
             className="text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed" 
