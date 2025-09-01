@@ -88,7 +88,7 @@ export default function Header() {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-[300px] sm:w-[400px]" data-testid="sheet-mobile-menu">
+            <SheetContent side="left" className="w-[300px] sm:w-[400px] bg-black border-gray-800" data-testid="sheet-mobile-menu">
               <nav className="flex flex-col space-y-6 mt-8">
                 <Link href="/" className="text-left text-white hover:text-yellow-400 transition-colors font-medium text-lg" data-testid="mobile-nav-home">
                   Home
@@ -106,14 +106,14 @@ export default function Header() {
                   Contact
                 </button>
                 
-                <div className="pt-6 border-t border-border space-y-4">
-                  <a href="tel:+27833423975" className="flex items-center text-primary font-semibold text-lg" data-testid="mobile-link-phone">
+                <div className="pt-6 border-t border-gray-700 space-y-4">
+                  <a href="tel:+27833423975" className="flex items-center text-blue-400 font-semibold text-lg" data-testid="mobile-link-phone">
                     <Phone className="w-5 h-5 mr-3" />
                     +27 83 342 3975
                   </a>
                   <Button 
                     onClick={() => navigateToSection('booking')} 
-                    className="w-full bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg"
+                    className="w-full bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 text-black font-semibold hover:from-yellow-200 hover:via-yellow-300 hover:to-yellow-400 shadow-lg"
                     data-testid="mobile-button-book"
                   >
                     Book Your Ride
