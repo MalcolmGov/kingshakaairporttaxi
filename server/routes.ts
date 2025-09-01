@@ -69,7 +69,7 @@ async function sendEmailNotification(booking: any) {
     `;
 
     const msg = {
-      to: 'info@kingshakaairporttaxi.co.za',
+      to: ['info@kingshakaairporttaxi.co.za', 'malcolmgov24@gmail.com'],
       from: 'bookings@kingshakaairporttaxi.co.za', // This should be a verified sender
       subject: `New Booking Request - ${booking.customerName} (R${booking.estimatedPrice})`,
       text: `NEW BOOKING REQUEST\n\nCustomer: ${booking.customerName}\nPhone: ${booking.customerPhone}\n\nPickup: ${booking.pickup}\nDestination: ${booking.destination}\n\nDate: ${new Date(booking.date).toLocaleDateString('en-ZA')}\nTime: ${booking.time}\nPassengers: ${booking.passengers}\nVehicle: ${booking.vehicleType || 'Any available'}\n\nEstimated Price: R${booking.estimatedPrice}\nBooking ID: ${booking.id}\n\nPlease confirm this booking with the customer.`,
