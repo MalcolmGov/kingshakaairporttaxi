@@ -130,7 +130,8 @@ King Shaka Airport Taxi - Since 2010`;
       // Reset form after successful submission
       form.reset();
     },
-    onError: () => {
+    onError: (error) => {
+      console.error('Booking submission error:', error);
       toast({
         title: "Booking Failed",
         description: "Please try again or call us directly.",
@@ -140,7 +141,17 @@ King Shaka Airport Taxi - Since 2010`;
   });
 
   const onSubmit = (data: InsertBooking) => {
-    bookingMutation.mutate(data);
+    console.log('Form submission started with data:', data);
+    console.log('Form validation errors:', form.formState.errors);
+    
+    // Add estimated price (required by schema)
+    const bookingData = {
+      ...data,
+      estimatedPrice: 500 // Default price - will be confirmed via WhatsApp
+    };
+    
+    console.log('Booking data with price:', bookingData);
+    bookingMutation.mutate(bookingData);
   };
 
 
@@ -296,7 +307,10 @@ King Shaka Airport Taxi - Since 2010`;
                                 type="date" 
                                 className="pl-10 min-h-[44px]"
                                 data-testid="input-return-date"
-                                {...field} 
+                                value={field.value || ""}
+                                onChange={field.onChange}
+                                onBlur={field.onBlur}
+                                name={field.name}
                               />
                             </div>
                           </FormControl>
@@ -321,7 +335,10 @@ King Shaka Airport Taxi - Since 2010`;
                                 type="time" 
                                 className="pl-10 min-h-[44px]"
                                 data-testid="input-return-time"
-                                {...field} 
+                                value={field.value || ""}
+                                onChange={field.onChange}
+                                onBlur={field.onBlur}
+                                name={field.name}
                               />
                             </div>
                           </FormControl>
