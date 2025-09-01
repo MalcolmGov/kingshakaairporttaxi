@@ -47,7 +47,7 @@ async function sendWhatsAppNotification(booking: any) {
         return { phoneNumber, success: true, sid: result.sid };
       } catch (error) {
         console.error(`❌ Failed to send WhatsApp notification to ${phoneNumber}:`, error);
-        return { phoneNumber, success: false, error: error.message };
+        return { phoneNumber, success: false, error: error instanceof Error ? error.message : String(error) };
       }
     });
     
