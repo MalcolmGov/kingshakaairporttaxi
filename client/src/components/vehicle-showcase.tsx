@@ -81,7 +81,7 @@ export default function VehicleShowcase() {
                 <Button 
                   onClick={() => scrollToBookingWithVehicle(vehicle.name)}
                   size="sm"
-                  className="relative z-20 w-full bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 text-black font-semibold hover:from-yellow-300 hover:via-orange-300 hover:to-yellow-400 border border-yellow-300"
+                  className="relative z-20 w-full bg-gradient-to-r from-yellow-500 via-yellow-500 to-yellow-500 text-black font-semibold hover:from-yellow-400 hover:via-yellow-400 hover:to-yellow-400 border border-yellow-500"
                   data-testid={`button-book-vehicle-${index}`}
                 >
                   <Car className="w-4 h-4 mr-2" />

@@ -37,16 +37,16 @@ export default function TeamPage() {
       <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-24 lg:py-32 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-yellow-400/30"></div>
+          <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-yellow-500/30"></div>
           <div className="absolute top-32 right-20 w-24 h-24 rounded-full bg-orange-400/20"></div>
           <div className="absolute bottom-20 left-1/4 w-40 h-40 rounded-full bg-blue-300/20"></div>
-          <div className="absolute bottom-10 right-10 w-28 h-28 rounded-full bg-yellow-300/25"></div>
+          <div className="absolute bottom-10 right-10 w-28 h-28 rounded-full bg-yellow-500/25"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-gradient-to-r from-blue-400/10 to-purple-400/10"></div>
         </div>
         
         {/* Geometric Shapes */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-16 right-1/4 w-20 h-20 rotate-45 bg-yellow-400"></div>
+          <div className="absolute top-16 right-1/4 w-20 h-20 rotate-45 bg-yellow-500"></div>
           <div className="absolute bottom-24 left-1/3 w-16 h-16 rotate-12 bg-orange-400"></div>
           <div className="absolute top-1/3 left-10 w-12 h-12 rotate-45 bg-blue-300"></div>
         </div>

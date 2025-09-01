@@ -39,7 +39,7 @@ export default function ReviewRequest() {
   };
 
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-br from-yellow-50 via-orange-50 to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900" data-testid="section-review-request">
+    <section className="py-16 lg:py-24 bg-gradient-to-br from-yellow-50 via-yellow-50 to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900" data-testid="section-review-request">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-12">
@@ -102,7 +102,7 @@ export default function ReviewRequest() {
                 </div>
               </div>
 
-              <div className="text-center p-6 bg-gradient-to-r from-yellow-400/10 via-orange-400/10 to-yellow-400/10 rounded-xl border border-yellow-200">
+              <div className="text-center p-6 bg-gradient-to-r from-yellow-500/10 via-yellow-500/10 to-yellow-500/10 rounded-xl border border-yellow-300">
                 <div className="flex justify-center mb-3">
                   {[...Array(5)].map((_, index) => (
                     <Star key={index} className="w-6 h-6 text-yellow-500 fill-current" />
