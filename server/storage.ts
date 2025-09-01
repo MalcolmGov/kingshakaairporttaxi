@@ -8,6 +8,7 @@ export interface IStorage {
   createBooking(booking: InsertBooking): Promise<Booking>;
   getBookings(): Promise<Booking[]>;
   getBooking(id: string): Promise<Booking | undefined>;
+  updateBookingStatus(id: string, status: string): Promise<Booking | undefined>;
   createContactMessage(message: InsertContactMessage): Promise<ContactMessage>;
   getContactMessages(): Promise<ContactMessage[]>;
 }
@@ -59,6 +60,16 @@ export class MemStorage implements IStorage {
 
   async getBooking(id: string): Promise<Booking | undefined> {
     return this.bookings.get(id);
+  }
+
+  async updateBookingStatus(id: string, status: string): Promise<Booking | undefined> {
+    const booking = this.bookings.get(id);
+    if (booking) {
+      const updatedBooking = { ...booking, status };
+      this.bookings.set(id, updatedBooking);
+      return updatedBooking;
+    }
+    return undefined;
   }
 
   async createContactMessage(insertMessage: InsertContactMessage): Promise<ContactMessage> {

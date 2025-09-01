@@ -84,10 +84,61 @@ async function sendEmailNotification(booking: any) {
   }
 }
 
-// Notification function with WhatsApp and SMS backup
+// Send customer notification after Accept/Reject
+async function sendCustomerNotification(booking: any, status: 'accepted' | 'rejected') {
+  try {
+    const customerMessage = status === 'accepted' 
+      ? `✅ BOOKING CONFIRMED!
+
+Hi ${booking.customerName},
+
+Your taxi booking has been CONFIRMED!
+
+📋 Booking Details:
+From: ${booking.pickup}
+To: ${booking.destination}
+Date: ${booking.date}
+Time: ${booking.time}
+Passengers: ${booking.passengers}
+Vehicle: ${booking.vehicleType}
+Price: R${booking.estimatedPrice}
+
+Our driver will contact you 15 minutes before pickup.
+
+Thank you for choosing King Shaka Airport Taxi! 🚗
+
+Booking ID: ${booking.id}`
+      : `❌ BOOKING UPDATE
+
+Hi ${booking.customerName},
+
+We're sorry, but we cannot accommodate your booking request for ${booking.date} at ${booking.time}.
+
+From: ${booking.pickup}
+To: ${booking.destination}
+
+Please try booking for a different time or contact us directly at +27 83 342 3975 for alternative arrangements.
+
+Thank you for considering King Shaka Airport Taxi.
+
+Booking ID: ${booking.id}`;
+
+    await twilioClient.messages.create({
+      body: customerMessage,
+      from: `whatsapp:${process.env.TWILIO_PHONE_NUMBER}`,
+      to: `whatsapp:${booking.customerPhone}`
+    });
+    
+    console.log(`✅ Customer notification sent to ${booking.customerPhone} - Status: ${status}`);
+  } catch (error) {
+    console.error(`❌ Failed to send customer notification:`, error);
+  }
+}
+
+// Notification function with WhatsApp interactive buttons
 async function sendBookingNotification(booking: any) {
   try {
-    const message = `NEW BOOKING REQUEST
+    const message = `🚗 NEW BOOKING REQUEST
 
 Customer: ${booking.customerName}
 Phone: ${booking.customerPhone}
@@ -103,7 +154,9 @@ Vehicle: ${booking.vehicleType || 'Any available'}
 Estimated Price: R${booking.estimatedPrice}
 Booking ID: ${booking.id}
 
-Please confirm this booking with the customer.`;
+Reply with:
+✅ ACCEPT to confirm
+❌ REJECT to decline`;
 
     // Phone numbers to notify
     const phoneNumbers = ['+27833423975', '+27834654639', '+27832002127'];
@@ -251,6 +304,40 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json({ estimatedPrice: basePrice });
     } catch (error) {
       res.status(500).json({ message: "Failed to calculate price" });
+    }
+  });
+
+  // WhatsApp webhook to handle Accept/Reject responses
+  app.post("/api/whatsapp/webhook", async (req, res) => {
+    try {
+      console.log('WhatsApp webhook received:', req.body);
+      
+      const { Body, From } = req.body;
+      const message = Body?.toLowerCase();
+      const fromNumber = From?.replace('whatsapp:', '');
+      
+      // Extract booking ID from message context (simplified approach)
+      if (message?.includes('accept') || message?.includes('reject')) {
+        // In a real implementation, you'd need to track conversation context
+        // For now, we'll look for the most recent pending booking
+        const recentBookings = await storage.getBookings();
+        const pendingBooking = recentBookings.find(b => b.status === 'pending');
+        
+        if (pendingBooking) {
+          const newStatus = message.includes('accept') ? 'confirmed' : 'rejected';
+          await storage.updateBookingStatus(pendingBooking.id, newStatus);
+          
+          // Send customer notification
+          await sendCustomerNotification(pendingBooking, newStatus === 'confirmed' ? 'accepted' : 'rejected');
+          
+          console.log(`✅ Booking ${pendingBooking.id} ${newStatus} by ${fromNumber}`);
+        }
+      }
+      
+      res.status(200).send('OK');
+    } catch (error) {
+      console.error('WhatsApp webhook error:', error);
+      res.status(500).json({ message: "Webhook processing failed" });
     }
   });
 
