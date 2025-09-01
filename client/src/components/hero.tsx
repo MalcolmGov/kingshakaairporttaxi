@@ -32,7 +32,7 @@ export default function Hero() {
           <div className="absolute bottom-32 md:bottom-40 left-4 md:left-12 w-16 h-16 md:w-20 md:h-20 bg-yellow-500 rounded-lg flex items-center justify-center transform rotate-45 shadow-lg">
             <div className="text-black text-xs font-bold">TRAIN</div>
           </div>
-          <div className="absolute top-1/3 right-1/3 md:right-1/4 w-16 h-16 md:w-20 md:h-20 bg-yellow-500 rounded-lg flex items-center justify-center transform -rotate-12 shadow-lg">
+          <div className="absolute top-32 md:top-40 right-8 md:right-16 w-16 h-16 md:w-20 md:h-20 bg-yellow-500 rounded-lg flex items-center justify-center transform -rotate-12 shadow-lg">
             <div className="text-black text-xs font-bold">SHOPPING</div>
           </div>
           <div className="absolute top-1/2 left-2 md:left-8 w-16 h-16 md:w-20 md:h-20 bg-yellow-500 rounded-lg flex items-center justify-center transform rotate-6 shadow-lg">
