@@ -92,9 +92,23 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-background/20 pt-8 text-center">
-          <p className="text-background/60" data-testid="text-footer-copyright">
+          <p className="text-background/60 mb-4" data-testid="text-footer-copyright">
             © 2024 King Shaka Airport Taxi. All rights reserved. | Serving KZN with pride since 2010
           </p>
+          
+          {/* Powered by Move Digital */}
+          <div className="flex justify-center">
+            <a 
+              href="https://www.movedigital.africa" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white font-medium text-sm hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              data-testid="link-powered-by-move-digital"
+            >
+              <span className="mr-2">⚡</span>
+              Powered by Move Digital
+            </a>
+          </div>
         </div>
       </div>
     </footer>
