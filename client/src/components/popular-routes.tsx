@@ -6,38 +6,32 @@ export default function PopularRoutes() {
     {
       route: "King Shaka Airport to Durban CBD",
       duration: "45 minutes",
-      description: "Direct airport transfer to Durban city center and business district",
-      price: "From R450"
+      description: "Direct airport transfer to Durban city center and business district"
     },
     {
       route: "King Shaka Airport to Umhlanga",
       duration: "25 minutes", 
-      description: "Quick transfer to Umhlanga Ridge hotels and business hub",
-      price: "From R320"
+      description: "Quick transfer to Umhlanga Ridge hotels and business hub"
     },
     {
       route: "King Shaka Airport to Ballito",
       duration: "15 minutes",
-      description: "Short drive to beautiful Ballito coastal resorts",
-      price: "From R250"
+      description: "Short drive to beautiful Ballito coastal resorts"
     },
     {
       route: "King Shaka Airport to Gateway Mall",
       duration: "30 minutes",
-      description: "Shopping and entertainment destination transfer",
-      price: "From R350"
+      description: "Shopping and entertainment destination transfer"
     },
     {
       route: "King Shaka Airport to Pietermaritzburg",
       duration: "90 minutes",
-      description: "Provincial capital city transfer service",
-      price: "From R850"
+      description: "Provincial capital city transfer service"
     },
     {
       route: "King Shaka Airport to Underberg",
       duration: "3 hours",
-      description: "Drakensberg gateway town for mountain adventures",
-      price: "From R1500"
+      description: "Drakensberg gateway town for mountain adventures"
     }
   ];
 
@@ -56,20 +50,17 @@ export default function PopularRoutes() {
             Popular King Shaka Airport Transfer Routes
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto" data-testid="text-routes-subtitle">
-            Fixed-price airport transfers to top KZN destinations. Professional drivers, transparent pricing, and guaranteed on-time service to your destination.
+            Professional airport transfers to top KZN destinations. Experienced drivers, reliable service, and guaranteed on-time transport to your destination.
           </p>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {routes.map((route, index) => (
             <div key={index} className="bg-card rounded-xl p-4 sm:p-6 shadow-lg border border-border hover:shadow-xl transition-shadow" data-testid={`card-route-${index}`}>
-              <div className="flex items-start justify-between mb-4">
+              <div className="flex items-start mb-4">
                 <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                   <MapPin className="text-primary-foreground w-5 h-5" />
                 </div>
-                <span className="text-primary font-bold text-lg" data-testid={`text-route-price-${index}`}>
-                  {route.price}
-                </span>
               </div>
               
               <h3 className="text-lg font-semibold text-card-foreground mb-2" data-testid={`text-route-name-${index}`}>

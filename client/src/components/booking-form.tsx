@@ -23,7 +23,6 @@ const bookingFormSchema = insertBookingSchema.extend({
 });
 
 export default function BookingForm() {
-  const [estimatedPrice, setEstimatedPrice] = useState<number | null>(null);
   const [showWhatsAppConfirmation, setShowWhatsAppConfirmation] = useState(false);
   const [lastBookingData, setLastBookingData] = useState<InsertBooking | null>(null);
   const { toast } = useToast();
@@ -39,7 +38,6 @@ export default function BookingForm() {
       vehicleType: "",
       contactNumber: "",
       name: "",
-      estimatedPrice: 0,
     },
   });
 
@@ -52,17 +50,6 @@ export default function BookingForm() {
     }
   }, [form]);
 
-  // Price calculation mutation
-  const calculatePriceMutation = useMutation({
-    mutationFn: async (data: { pickup: string; destination: string; passengers: number }) => {
-      const response = await apiRequest("POST", "/api/calculate-price", data);
-      return response.json();
-    },
-    onSuccess: (data) => {
-      setEstimatedPrice(data.estimatedPrice);
-      form.setValue("estimatedPrice", data.estimatedPrice);
-    },
-  });
 
   // WhatsApp message formatting function
   const formatBookingMessage = (data: InsertBooking) => {
@@ -77,7 +64,7 @@ export default function BookingForm() {
 🕐 Time: ${data.time}
 👥 Passengers: ${data.passengers}
 🚙 Vehicle: ${data.vehicleType}
-💰 Estimated Fare: R${data.estimatedPrice}
+📍 Route: ${data.pickup} → ${data.destination}
 
 Please confirm availability and pickup time.
 
@@ -109,14 +96,13 @@ King Shaka Airport Taxi - Since 2010`;
     },
     onSuccess: (_, variables) => {
       // Store booking data and immediately open WhatsApp
-      const bookingDataWithPrice = { ...variables, estimatedPrice: estimatedPrice || 0 };
-      setLastBookingData(bookingDataWithPrice);
+      setLastBookingData(variables);
       
-      console.log('Booking submitted successfully:', bookingDataWithPrice);
+      console.log('Booking submitted successfully:', variables);
       
       // Immediately open WhatsApp with booking details
       const primaryNumber = "27833423975";
-      const message = formatBookingMessage(bookingDataWithPrice);
+      const message = formatBookingMessage(variables);
       const whatsappWebUrl = `https://web.whatsapp.com/send?phone=${primaryNumber}&text=${encodeURIComponent(message)}`;
       window.open(whatsappWebUrl, '_blank');
       
@@ -127,7 +113,6 @@ King Shaka Airport Taxi - Since 2010`;
       
       // Reset form after successful submission
       form.reset();
-      setEstimatedPrice(null);
     },
     onError: () => {
       toast({
@@ -139,33 +124,9 @@ King Shaka Airport Taxi - Since 2010`;
   });
 
   const onSubmit = (data: InsertBooking) => {
-    if (!estimatedPrice) {
-      toast({
-        title: "Please calculate price first",
-        description: "Fill in pickup and destination to get an estimate.",
-        variant: "destructive",
-      });
-      return;
-    }
     bookingMutation.mutate(data);
   };
 
-  const handleCalculatePrice = () => {
-    const pickup = form.getValues("pickup");
-    const destination = form.getValues("destination");
-    const passengers = form.getValues("passengers");
-
-    if (!pickup || !destination) {
-      toast({
-        title: "Missing Information",
-        description: "Please enter both pickup and destination.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    calculatePriceMutation.mutate({ pickup, destination, passengers });
-  };
 
   return (
     <section id="booking" className="py-16 lg:py-24 gradient-bg" data-testid="section-booking">
@@ -176,7 +137,7 @@ King Shaka Airport Taxi - Since 2010`;
               Book King Shaka Airport Taxi Online
             </h2>
             <p className="text-lg sm:text-xl" style={{ color: '#374151', fontWeight: '500' }} data-testid="text-booking-subtitle">
-              Instant quotes for airport transfers. Fixed prices, professional drivers, 24/7 availability throughout KZN
+              Professional airport transfers throughout KZN. Licensed drivers, 24/7 availability, reliable service
             </p>
           </div>
           
@@ -372,33 +333,8 @@ King Shaka Airport Taxi - Since 2010`;
                   
                   <div className="md:col-span-2 space-y-6">
                     <Button 
-                      type="button"
-                      variant="outline"
-                      onClick={handleCalculatePrice}
-                      disabled={calculatePriceMutation.isPending}
-                      className="w-full min-h-[44px]"
-                      data-testid="button-calculate-price"
-                    >
-                      {calculatePriceMutation.isPending ? "Calculating..." : "Calculate Price"}
-                    </Button>
-
-                    {estimatedPrice && (
-                      <div className="bg-accent/10 border border-accent/20 rounded-lg p-4" data-testid="price-display">
-                        <div className="flex justify-between items-center">
-                          <span className="text-accent-foreground font-medium">Estimated Price:</span>
-                          <span className="text-2xl font-bold text-accent" data-testid="text-estimated-price">
-                            R {estimatedPrice}
-                          </span>
-                        </div>
-                        <p className="text-accent-foreground/70 text-sm mt-1">
-                          Fixed rates • No surge pricing • No hidden fees
-                        </p>
-                      </div>
-                    )}
-                    
-                    <Button 
                       type="submit" 
-                      disabled={bookingMutation.isPending || !estimatedPrice}
+                      disabled={bookingMutation.isPending}
                       className="w-full bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200 min-h-[44px]"
                       data-testid="button-whatsapp-booking"
                     >

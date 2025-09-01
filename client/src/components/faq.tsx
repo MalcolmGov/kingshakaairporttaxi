@@ -4,8 +4,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export default function FAQ() {
   const faqs = [
     {
-      question: "How much does a taxi cost from King Shaka Airport to Durban CBD?",
-      answer: "Our fixed-price airport transfers start from competitive rates with no surge pricing. Use our online booking form for instant price calculations, or call +27 83 342 3975 for immediate quotes."
+      question: "How do I get a quote for airport transfers?",
+      answer: "Contact us directly for personalized quotes based on your specific route and requirements. Call +27 83 342 3975 or use our online booking form to request a quote."
     },
     {
       question: "What areas do you serve from King Shaka Airport?",
@@ -13,7 +13,7 @@ export default function FAQ() {
     },
     {
       question: "Are your airport taxi rates fixed?",
-      answer: "Yes, we offer transparent fixed-price airport transfers with no surge pricing or hidden fees. Book online for instant price calculations or call for immediate quotes."
+      answer: "Yes, we offer transparent airport transfers with no surge pricing or hidden fees. Contact us for quotes or use our online booking form to request service."
     },
     {
       question: "Why choose King Shaka Airport Taxi over ride-sharing apps?",
