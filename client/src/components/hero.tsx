@@ -18,17 +18,17 @@ export default function Hero() {
           backgroundImage: "url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80')"
         }}
       >
-        <div className="absolute inset-0 bg-primary/80"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
       </div>
       
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight" data-testid="text-hero-title">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }} data-testid="text-hero-title">
             Reliable and Affordable Taxi Service at{" "}
-            <span className="text-accent">King Shaka Airport</span>
+            <span className="text-accent drop-shadow-lg">King Shaka Airport</span>
           </h1>
           
-          <p className="text-xl sm:text-2xl text-primary-foreground/90 mb-8 lg:mb-12 max-w-3xl mx-auto leading-relaxed" data-testid="text-hero-subtitle">
+          <p className="text-xl sm:text-2xl text-white mb-8 lg:mb-12 max-w-3xl mx-auto leading-relaxed" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }} data-testid="text-hero-subtitle">
             Making Your Travels Simpler and Stress-Free - Over a Decade of Safe, Professional Service
           </p>
           
@@ -54,17 +54,17 @@ export default function Hero() {
             </Button>
           </div>
           
-          <div className="mt-12 lg:mt-16 flex flex-col sm:flex-row justify-center items-center gap-8 text-primary-foreground/80">
-            <div className="flex items-center" data-testid="feature-safety">
-              <Shield className="text-accent mr-2 w-5 h-5" />
+          <div className="mt-12 lg:mt-16 flex flex-col sm:flex-row justify-center items-center gap-8 text-white">
+            <div className="flex items-center" data-testid="feature-safety" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.7)' }}>
+              <Shield className="text-accent mr-2 w-5 h-5 drop-shadow-lg" />
               <span className="font-medium">Zero Safety Incidents</span>
             </div>
-            <div className="flex items-center" data-testid="feature-availability">
-              <Clock className="text-accent mr-2 w-5 h-5" />
+            <div className="flex items-center" data-testid="feature-availability" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.7)' }}>
+              <Clock className="text-accent mr-2 w-5 h-5 drop-shadow-lg" />
               <span className="font-medium">24/7 Availability</span>
             </div>
-            <div className="flex items-center" data-testid="feature-experience">
-              <Star className="text-accent mr-2 w-5 h-5" />
+            <div className="flex items-center" data-testid="feature-experience" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.7)' }}>
+              <Star className="text-accent mr-2 w-5 h-5 drop-shadow-lg" />
               <span className="font-medium">Serving Since 2010</span>
             </div>
           </div>
