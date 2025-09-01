@@ -102,7 +102,7 @@ export default function ReviewRequest() {
                 </div>
               </div>
 
-              <div className="text-center p-6 bg-gradient-to-r from-yellow-500/10 via-yellow-500/10 to-yellow-500/10 rounded-xl border border-yellow-300">
+              <div className="text-center p-6 bg-gradient-to-r from-yellow-400/10 via-yellow-400/10 to-yellow-400/10 rounded-xl border border-yellow-400">
                 <div className="flex justify-center mb-3">
                   {[...Array(5)].map((_, index) => (
                     <Star key={index} className="w-6 h-6 text-yellow-500 fill-current" />

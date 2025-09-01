@@ -14,15 +14,15 @@ export default function Footer() {
     <footer className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white py-16 overflow-hidden" data-testid="footer-main">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-yellow-500"></div>
+        <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-yellow-400"></div>
         <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-orange-400"></div>
         <div className="absolute bottom-20 left-1/4 w-36 h-36 rounded-full bg-blue-400"></div>
-        <div className="absolute bottom-10 right-1/3 w-28 h-28 rounded-full bg-yellow-500"></div>
+        <div className="absolute bottom-10 right-1/3 w-28 h-28 rounded-full bg-yellow-400"></div>
       </div>
       
       {/* Geometric Shapes */}
       <div className="absolute inset-0 opacity-3">
-        <div className="absolute top-32 left-1/3 w-16 h-16 rotate-45 bg-gradient-to-r from-yellow-500 to-yellow-500"></div>
+        <div className="absolute top-32 left-1/3 w-16 h-16 rotate-45 bg-gradient-to-r from-yellow-400 to-yellow-400"></div>
         <div className="absolute bottom-32 right-1/4 w-12 h-12 rotate-12 bg-gradient-to-r from-blue-400 to-purple-500"></div>
       </div>
       
@@ -61,8 +61,8 @@ export default function Footer() {
           {/* Quick Links */}
           <div data-testid="footer-quick-links">
             <h4 className="font-bold text-lg mb-6 text-white relative">
-              <span className="bg-gradient-to-r from-yellow-500 via-yellow-500 to-yellow-500 bg-clip-text text-transparent">Airport Transfer Services</span>
-              <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-yellow-500 to-yellow-500 rounded-full"></div>
+              <span className="bg-gradient-to-r from-yellow-400 via-yellow-400 to-yellow-400 bg-clip-text text-transparent">Airport Transfer Services</span>
+              <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-400 rounded-full"></div>
             </h4>
             <ul className="space-y-3">
               <li><button onClick={() => scrollToSection('services')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-link-services">King Shaka Airport Taxi</button></li>
@@ -76,8 +76,8 @@ export default function Footer() {
           {/* Popular Routes */}
           <div data-testid="footer-popular-routes">
             <h4 className="font-bold text-lg mb-6 text-white relative">
-              <span className="bg-gradient-to-r from-yellow-500 via-yellow-500 to-yellow-500 bg-clip-text text-transparent">Popular KZN Destinations</span>
-              <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-yellow-500 to-yellow-500 rounded-full"></div>
+              <span className="bg-gradient-to-r from-yellow-400 via-yellow-400 to-yellow-400 bg-clip-text text-transparent">Popular KZN Destinations</span>
+              <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-400 rounded-full"></div>
             </h4>
             <ul className="space-y-3">
               <li><button onClick={() => scrollToSection('booking')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-route-durban">Durban CBD Transfer</button></li>

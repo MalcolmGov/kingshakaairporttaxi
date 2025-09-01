@@ -42,7 +42,7 @@ export default function Header() {
               data-testid="logo-image"
             />
             <div className="flex flex-col">
-              <span className="font-bold text-sm sm:text-lg lg:text-xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-500 bg-clip-text text-transparent leading-tight">King Shaka Airport Taxi</span>
+              <span className="font-bold text-sm sm:text-lg lg:text-xl bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent leading-tight">King Shaka Airport Taxi</span>
               <span className="text-xs lg:text-sm text-black hidden sm:block">Reliable & Affordable Rides in KZN</span>
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function Header() {
             </a>
             <Button 
               onClick={() => navigateToSection('booking')} 
-              className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-500 text-black font-semibold hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-400 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200 border-2 border-yellow-400"
+              className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 text-black font-semibold hover:from-yellow-200 hover:via-yellow-300 hover:to-yellow-400 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200 border-2 border-yellow-300"
               data-testid="button-book-now"
             >
               Book Now
