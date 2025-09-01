@@ -101,11 +101,11 @@ export default function Footer() {
                 </div>
                 <span className="text-white font-medium group-hover:text-yellow-300 transition-colors">+27 83 342 3975</span>
               </a>
-              <a href="mailto:info@kingshakataxi.co.za" className="flex items-center group hover:bg-white/5 p-3 rounded-lg transition-colors duration-300 cursor-pointer" data-testid="footer-email">
+              <a href="mailto:info@kingshakaairporttaxi.co.za" className="flex items-center group hover:bg-white/5 p-3 rounded-lg transition-colors duration-300 cursor-pointer" data-testid="footer-email">
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center mr-4 shadow-lg">
                   <Mail className="text-white w-5 h-5" />
                 </div>
-                <span className="text-white font-medium group-hover:text-yellow-300 transition-colors">info@kingshakataxi.co.za</span>
+                <span className="text-white font-medium group-hover:text-yellow-300 transition-colors">info@kingshakaairporttaxi.co.za</span>
               </a>
               <div className="flex items-start group hover:bg-white/5 p-3 rounded-lg transition-colors duration-300" data-testid="footer-address">
                 <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-4 shadow-lg flex-shrink-0 mt-0">

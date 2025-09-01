@@ -95,7 +95,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-primary-foreground font-semibold">Email Us</p>
-                  <p className="text-primary-foreground/80">info@kingshakataxi.co.za</p>
+                  <p className="text-primary-foreground/80">info@kingshakaairporttaxi.co.za</p>
                 </div>
               </div>
             </div>
