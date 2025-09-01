@@ -7,6 +7,7 @@ import ReviewRequest from "@/components/review-request";
 import GBPIntegration from "@/components/gbp-integration";
 import About from "@/components/about";
 import BookingForm from "@/components/booking-form";
+import Gallery from "@/components/gallery";
 import VehicleShowcase from "@/components/vehicle-showcase";
 import KznDestinations from "@/components/kzn-destinations";
 import PopularRoutes from "@/components/popular-routes";
@@ -26,6 +27,7 @@ export default function Home() {
         <ReviewRequest />
         <About />
         <BookingForm />
+        <Gallery />
         <VehicleShowcase />
         <PopularRoutes />
         <KznDestinations />
