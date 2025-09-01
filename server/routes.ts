@@ -32,15 +32,25 @@ async function sendWhatsAppNotification(booking: any) {
 
 ✅ Please confirm this booking with the customer.`;
 
-    await twilioClient.messages.create({
-      body: message,
-      from: `whatsapp:${process.env.TWILIO_PHONE_NUMBER}`,
-      to: 'whatsapp:+27833423975'
+    // Send to both phone numbers
+    const phoneNumbers = ['+27833423975', '+27834654639'];
+    
+    const notificationPromises = phoneNumbers.map(async (phoneNumber) => {
+      try {
+        await twilioClient.messages.create({
+          body: message,
+          from: `whatsapp:${process.env.TWILIO_PHONE_NUMBER}`,
+          to: `whatsapp:${phoneNumber}`
+        });
+        console.log(`WhatsApp notification sent to ${phoneNumber} for booking:`, booking.id);
+      } catch (error) {
+        console.error(`Failed to send WhatsApp notification to ${phoneNumber}:`, error);
+      }
     });
     
-    console.log('WhatsApp notification sent for booking:', booking.id);
+    await Promise.all(notificationPromises);
   } catch (error) {
-    console.error('Failed to send WhatsApp notification:', error);
+    console.error('Failed to send WhatsApp notifications:', error);
   }
 }
 
