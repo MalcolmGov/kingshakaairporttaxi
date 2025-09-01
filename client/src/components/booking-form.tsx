@@ -66,7 +66,22 @@ export default function BookingForm() {
 
   // WhatsApp message formatting function
   const formatBookingMessage = (data: InsertBooking) => {
-    return `Hi! I need a taxi booking: ${data.name}, ${data.pickup} to ${data.destination}, ${data.date} ${data.time}, ${data.passengers} passengers, R${data.estimatedPrice}`;
+    return `🚗 TAXI BOOKING REQUEST
+
+👤 Name: ${data.name}
+📞 Phone: ${data.contactNumber}
+
+📍 From: ${data.pickup}
+📍 To: ${data.destination}
+📅 Date: ${data.date}
+🕐 Time: ${data.time}
+👥 Passengers: ${data.passengers}
+🚙 Vehicle: ${data.vehicleType}
+💰 Estimated Fare: R${data.estimatedPrice}
+
+Please confirm availability and pickup time.
+
+King Shaka Airport Taxi - Since 2010`;
   };
 
   const handleWhatsAppBooking = () => {
