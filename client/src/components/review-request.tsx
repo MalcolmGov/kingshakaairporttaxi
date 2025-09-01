@@ -11,8 +11,8 @@ export default function ReviewRequest() {
   // Google Business Profile review link
   const reviewLink = "https://g.page/r/CQoUqY8j_R2mEAg/review";
   
-  // QR code for the review link (using Google Charts API)
-  const qrCodeUrl = `https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=${encodeURIComponent(reviewLink)}`;
+  // QR code for the review link (using QR Server API)
+  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(reviewLink)}`;
 
   const copyReviewLink = async () => {
     try {
