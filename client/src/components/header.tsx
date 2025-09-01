@@ -42,7 +42,7 @@ export default function Header() {
               data-testid="logo-image"
             />
             <div className="flex flex-col">
-              <span className="font-bold text-lg lg:text-xl bg-gradient-to-r from-yellow-500 via-blue-600 to-yellow-500 bg-clip-text text-transparent">King Shaka Airport Taxi</span>
+              <span className="font-bold text-lg lg:text-xl bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 bg-clip-text text-transparent">King Shaka Airport Taxi</span>
               <span className="text-xs lg:text-sm text-muted-foreground">Reliable & Affordable Rides in KZN</span>
             </div>
           </div>
