@@ -3,6 +3,8 @@ import Hero from "@/components/hero";
 import Services from "@/components/services";
 import Safety from "@/components/safety";
 import Reviews from "@/components/reviews";
+import ReviewRequest from "@/components/review-request";
+import GBPIntegration from "@/components/gbp-integration";
 import About from "@/components/about";
 import BookingForm from "@/components/booking-form";
 import VehicleShowcase from "@/components/vehicle-showcase";
@@ -21,6 +23,7 @@ export default function Home() {
         <Services />
         <Safety />
         <Reviews />
+        <ReviewRequest />
         <About />
         <BookingForm />
         <VehicleShowcase />
@@ -28,6 +31,7 @@ export default function Home() {
         <KznDestinations />
         <FAQ />
         <Contact />
+        <GBPIntegration />
         <Footer />
         <WhatsAppFloat />
       </div>
