@@ -66,25 +66,25 @@ export default function BookingForm() {
 
   // WhatsApp message formatting function
   const formatBookingMessage = (data: InsertBooking) => {
-    return `🚗 TAXI BOOKING REQUEST
+    return `TAXI BOOKING REQUEST
 
-📋 Booking Details:
-- Name: ${data.name}
-- Phone: ${data.contactNumber}
+Booking Details:
+Name: ${data.name}
+Phone: ${data.contactNumber}
 
-🗺️ Journey:
-- From: ${data.pickup}
-- To: ${data.destination}
-- Date: ${data.date}
-- Time: ${data.time}
-- Passengers: ${data.passengers}
-- Vehicle: ${data.vehicleType}
+Journey:
+From: ${data.pickup}
+To: ${data.destination}
+Date: ${data.date}
+Time: ${data.time}
+Passengers: ${data.passengers}
+Vehicle: ${data.vehicleType}
 
-💰 Estimated Fare: R${data.estimatedPrice}
+Estimated Fare: R${data.estimatedPrice}
 
-Please confirm availability and exact pickup time.
+Please confirm availability and pickup time.
 
-King Shaka Airport Taxi - Since 2010 🚗✨`;
+King Shaka Airport Taxi`;
   };
 
   const handleWhatsAppBooking = () => {
@@ -93,12 +93,16 @@ King Shaka Airport Taxi - Since 2010 🚗✨`;
       return;
     }
     
-    const primaryNumber = "+27833423975"; // Primary contact number
+    const primaryNumber = "27833423975"; // Primary contact number (without +)
     const message = formatBookingMessage(lastBookingData);
     console.log('WhatsApp message:', message);
+    console.log('Phone number:', primaryNumber);
     
-    // Open WhatsApp with primary number only
-    const whatsappUrl = `https://wa.me/${primaryNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
+    // Create WhatsApp URL with proper encoding
+    const whatsappUrl = `https://wa.me/${primaryNumber}?text=${encodeURIComponent(message)}`;
+    console.log('WhatsApp URL:', whatsappUrl);
+    
+    // Open WhatsApp
     window.open(whatsappUrl, '_blank');
   };
 
