@@ -95,18 +95,18 @@ export default function Footer() {
               <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
             </h4>
             <div className="space-y-4">
-              <div className="flex items-center group hover:bg-white/5 p-3 rounded-lg transition-colors duration-300" data-testid="footer-phone">
+              <a href="tel:+27833423975" className="flex items-center group hover:bg-white/5 p-3 rounded-lg transition-colors duration-300 cursor-pointer" data-testid="footer-phone">
                 <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-700 rounded-lg flex items-center justify-center mr-4 shadow-lg">
                   <Phone className="text-white w-5 h-5" />
                 </div>
                 <span className="text-white font-medium group-hover:text-yellow-300 transition-colors">+27 83 342 3975</span>
-              </div>
-              <div className="flex items-center group hover:bg-white/5 p-3 rounded-lg transition-colors duration-300" data-testid="footer-email">
+              </a>
+              <a href="mailto:info@kingshakataxi.co.za" className="flex items-center group hover:bg-white/5 p-3 rounded-lg transition-colors duration-300 cursor-pointer" data-testid="footer-email">
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center mr-4 shadow-lg">
                   <Mail className="text-white w-5 h-5" />
                 </div>
                 <span className="text-white font-medium group-hover:text-yellow-300 transition-colors">info@kingshakataxi.co.za</span>
-              </div>
+              </a>
               <div className="flex items-start group hover:bg-white/5 p-3 rounded-lg transition-colors duration-300" data-testid="footer-address">
                 <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-4 shadow-lg flex-shrink-0 mt-0">
                   <MapPin className="text-white w-5 h-5" />
