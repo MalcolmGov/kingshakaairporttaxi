@@ -11,6 +11,7 @@ import PopularRoutes from "@/components/popular-routes";
 import FAQ from "@/components/faq";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
+import { WhatsAppFloat } from "@/components/whatsapp-float";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         <FAQ />
         <Contact />
         <Footer />
+        <WhatsAppFloat />
       </div>
   );
 }
