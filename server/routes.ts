@@ -90,7 +90,7 @@ async function sendCustomerNotification(booking: any, status: 'accepted' | 'reje
     const customerMessage = status === 'accepted' 
       ? `✅ BOOKING CONFIRMED!
 
-Hi ${booking.customerName},
+Hi ${booking.name},
 
 Your taxi booking has been CONFIRMED!
 
@@ -110,7 +110,7 @@ Thank you for choosing King Shaka Airport Taxi! 🚗
 Booking ID: ${booking.id}`
       : `❌ BOOKING UPDATE
 
-Hi ${booking.customerName},
+Hi ${booking.name},
 
 We're sorry, but we cannot accommodate your booking request for ${booking.date} at ${booking.time}.
 
@@ -126,10 +126,10 @@ Booking ID: ${booking.id}`;
     await twilioClient.messages.create({
       body: customerMessage,
       from: `whatsapp:${process.env.TWILIO_PHONE_NUMBER}`,
-      to: `whatsapp:${booking.customerPhone}`
+      to: `whatsapp:${booking.contactNumber}`
     });
     
-    console.log(`✅ Customer notification sent to ${booking.customerPhone} - Status: ${status}`);
+    console.log(`✅ Customer notification sent to ${booking.contactNumber} - Status: ${status}`);
   } catch (error) {
     console.error(`❌ Failed to send customer notification:`, error);
   }
@@ -140,13 +140,13 @@ async function sendBookingNotification(booking: any) {
   try {
     const message = `🚗 NEW BOOKING REQUEST
 
-Customer: ${booking.customerName}
-Phone: ${booking.customerPhone}
+Customer: ${booking.name}
+Phone: ${booking.contactNumber}
 
 Pickup: ${booking.pickup}
 Destination: ${booking.destination}
 
-Date: ${new Date(booking.date).toLocaleDateString('en-ZA')}
+Date: ${booking.date}
 Time: ${booking.time}
 Passengers: ${booking.passengers}
 Vehicle: ${booking.vehicleType || 'Any available'}
