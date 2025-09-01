@@ -99,7 +99,7 @@ export default function Footer() {
           {/* Powered by Move Digital */}
           <div className="flex justify-center">
             <a 
-              href="https://www.movedigital.africa" 
+              href="https://movedigital.africa" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white font-medium text-sm hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
