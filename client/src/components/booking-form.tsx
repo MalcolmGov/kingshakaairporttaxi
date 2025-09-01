@@ -88,21 +88,18 @@ King Shaka Airport Taxi - Since 2010 🚗✨`;
   };
 
   const handleWhatsAppBooking = () => {
-    if (!lastBookingData) return;
+    if (!lastBookingData) {
+      console.error('No booking data available');
+      return;
+    }
     
     const primaryNumber = "+27833423975"; // Primary contact number
-    const secondaryNumber = "+27834654639"; // Secondary contact number
     const message = formatBookingMessage(lastBookingData);
+    console.log('WhatsApp message:', message);
     
-    // Open WhatsApp with primary number
+    // Open WhatsApp with primary number only
     const whatsappUrl = `https://wa.me/${primaryNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
-    
-    // Also open WhatsApp with secondary number (with slight delay)
-    setTimeout(() => {
-      const secondaryWhatsappUrl = `https://wa.me/${secondaryNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
-      window.open(secondaryWhatsappUrl, '_blank');
-    }, 1000);
   };
 
   // Booking submission mutation
@@ -112,18 +109,20 @@ King Shaka Airport Taxi - Since 2010 🚗✨`;
       return response.json();
     },
     onSuccess: (_, variables) => {
-      // Store booking data BEFORE resetting form
-      setLastBookingData(variables);
+      // Store booking data including the estimated price
+      const bookingDataWithPrice = { ...variables, estimatedPrice: estimatedPrice || 0 };
+      setLastBookingData(bookingDataWithPrice);
       setShowWhatsAppConfirmation(true);
+      
+      console.log('Booking submitted successfully:', bookingDataWithPrice);
+      
       toast({
         title: "Booking Confirmed!",
         description: "We'll contact you shortly to confirm your ride details.",
       });
-      // Reset form after storing data
-      setTimeout(() => {
-        form.reset();
-        setEstimatedPrice(null);
-      }, 100);
+      
+      // Don't reset form immediately to preserve data for WhatsApp
+      // Form will reset when user closes the confirmation
     },
     onError: () => {
       toast({
@@ -426,7 +425,12 @@ King Shaka Airport Taxi - Since 2010 🚗✨`;
                         <div className="text-center">
                           <Button 
                             variant="ghost"
-                            onClick={() => setShowWhatsAppConfirmation(false)}
+                            onClick={() => {
+                              setShowWhatsAppConfirmation(false);
+                              setLastBookingData(null);
+                              form.reset();
+                              setEstimatedPrice(null);
+                            }}
                             className="text-muted-foreground hover:text-foreground"
                             data-testid="button-close-confirmation"
                           >
