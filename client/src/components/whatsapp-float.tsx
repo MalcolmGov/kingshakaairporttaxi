@@ -12,11 +12,12 @@ export function WhatsAppFloat() {
     <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
       <button
         onClick={handleWhatsAppClick}
-        className="bg-green-500 hover:bg-green-600 text-white rounded-full p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 animate-pulse"
+        className="bg-green-500 hover:bg-green-600 text-white rounded-full px-4 py-3 sm:px-6 sm:py-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 animate-pulse flex items-center gap-2 sm:gap-3"
         data-testid="button-whatsapp-float"
         aria-label="Chat on WhatsApp"
       >
         <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6" />
+        <span className="font-semibold text-sm sm:text-base">Chat Now</span>
       </button>
     </div>
   );
