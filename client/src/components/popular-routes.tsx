@@ -29,9 +29,9 @@ export default function PopularRoutes() {
       description: "Provincial capital city transfer service"
     },
     {
-      route: "King Shaka Airport to Underberg",
-      duration: "3 hours",
-      description: "Drakensberg gateway town for mountain adventures"
+      route: "Richards Bay to St Lucia",
+      duration: "1 hour",
+      description: "Coastal wetland paradise and wildlife destination"
     }
   ];
 
