@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Shield, Clock, Users, CheckCircle, Star } from "lucide-react";
 import logoImage from "../assets/king-shaka-logo.png";
+import taxiServiceImage from "../assets/taxi-service-about.png";
 
 export default function About() {
   const features = [
@@ -55,10 +56,10 @@ export default function About() {
               data-testid="img-company-logo"
             />
             <img 
-              src="https://kingshakaairporttaxi.co.za/wp-content/uploads/2023/09/shutterstock_627682721.jpg" 
-              alt="King Shaka Airport Taxi Service vehicle waiting outside the terminal" 
+              src={taxiServiceImage} 
+              alt="Professional taxi service with driver helping passenger with luggage" 
               className="rounded-xl shadow-2xl w-full"
-              data-testid="img-airport-terminal"
+              data-testid="img-taxi-service"
             />
           </div>
           
