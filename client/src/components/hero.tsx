@@ -12,14 +12,36 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-start sm:items-center justify-center overflow-hidden pt-20 sm:pt-0" data-testid="section-hero">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
-        style={{
-          backgroundImage: `url(${taxiBackground})`
-        }}
-      >
-        <div className="absolute inset-0 bg-black/60"></div>
+      {/* Original Background with NEED A TAXI */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-900 to-black">
+        {/* Large NEED A TAXI text background */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-20">
+          <div className="text-gray-400 text-[200px] md:text-[300px] lg:text-[400px] font-black leading-none tracking-wider transform -rotate-3 select-none">
+            NEED A TAXI?
+          </div>
+        </div>
+        
+        {/* Transport icons background */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-1/4 left-1/4 w-20 h-20 md:w-24 md:h-24 bg-yellow-600 rounded-xl flex items-center justify-center transform rotate-12">
+            <div className="text-black text-xs font-bold">PORT</div>
+          </div>
+          <div className="absolute top-1/3 right-1/4 w-20 h-20 md:w-24 md:h-24 bg-yellow-600 rounded-xl flex items-center justify-center transform -rotate-6">
+            <div className="text-black text-xs font-bold">AIRPORT</div>
+          </div>
+          <div className="absolute bottom-1/3 left-1/5 w-20 h-20 md:w-24 md:h-24 bg-yellow-600 rounded-xl flex items-center justify-center transform rotate-45">
+            <div className="text-black text-xs font-bold">TRAIN</div>
+          </div>
+          <div className="absolute bottom-1/4 right-1/3 w-20 h-20 md:w-24 md:h-24 bg-yellow-600 rounded-xl flex items-center justify-center transform -rotate-12">
+            <div className="text-black text-xs font-bold">SHOPPING</div>
+          </div>
+          <div className="absolute top-1/2 left-1/6 w-20 h-20 md:w-24 md:h-24 bg-yellow-600 rounded-xl flex items-center justify-center transform rotate-6">
+            <div className="text-black text-xs font-bold">HOTEL</div>
+          </div>
+          <div className="absolute top-2/3 right-1/6 w-20 h-20 md:w-24 md:h-24 bg-yellow-600 rounded-xl flex items-center justify-center transform rotate-30">
+            <div className="text-black text-xs font-bold">HOME</div>
+          </div>
+        </div>
       </div>
       
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
