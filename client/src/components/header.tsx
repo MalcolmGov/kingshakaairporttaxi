@@ -30,7 +30,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50" data-testid="header-main">
+    <header className="bg-black/95 backdrop-blur-sm border-b border-gray-800 sticky top-0 z-50" data-testid="header-main">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 lg:h-28">
           {/* Logo */}
@@ -49,26 +49,26 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8" data-testid="nav-desktop">
-            <Link href="/" className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-home">
+            <Link href="/" className="text-white hover:text-yellow-400 transition-colors font-medium" data-testid="nav-home">
               Home
             </Link>
-            <button onClick={() => navigateToSection('services')} className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-services">
+            <button onClick={() => navigateToSection('services')} className="text-white hover:text-yellow-400 transition-colors font-medium" data-testid="nav-services">
               Services
             </button>
-            <button onClick={() => navigateToSection('about')} className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-about">
+            <button onClick={() => navigateToSection('about')} className="text-white hover:text-yellow-400 transition-colors font-medium" data-testid="nav-about">
               About
             </button>
-            <Link href="/team" className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-team">
+            <Link href="/team" className="text-white hover:text-yellow-400 transition-colors font-medium" data-testid="nav-team">
               Our Team
             </Link>
-            <button onClick={() => navigateToSection('contact')} className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-contact">
+            <button onClick={() => navigateToSection('contact')} className="text-white hover:text-yellow-400 transition-colors font-medium" data-testid="nav-contact">
               Contact
             </button>
           </nav>
 
           {/* Contact & CTA */}
           <div className="hidden lg:flex items-center space-x-4" data-testid="header-cta">
-            <a href="tel:+27833423975" className="text-primary font-semibold hover:text-primary/80 transition-colors flex items-center" data-testid="link-phone">
+            <a href="tel:+27833423975" className="text-blue-400 font-semibold hover:text-blue-300 transition-colors flex items-center" data-testid="link-phone">
               <Phone className="w-4 h-4 mr-2" />
               +27 83 342 3975
             </a>
@@ -90,19 +90,19 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="left" className="w-[300px] sm:w-[400px]" data-testid="sheet-mobile-menu">
               <nav className="flex flex-col space-y-6 mt-8">
-                <Link href="/" className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-home">
+                <Link href="/" className="text-left text-white hover:text-yellow-400 transition-colors font-medium text-lg" data-testid="mobile-nav-home">
                   Home
                 </Link>
-                <button onClick={() => navigateToSection('services')} className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-services">
+                <button onClick={() => navigateToSection('services')} className="text-left text-white hover:text-yellow-400 transition-colors font-medium text-lg" data-testid="mobile-nav-services">
                   Services
                 </button>
-                <button onClick={() => navigateToSection('about')} className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-about">
+                <button onClick={() => navigateToSection('about')} className="text-left text-white hover:text-yellow-400 transition-colors font-medium text-lg" data-testid="mobile-nav-about">
                   About
                 </button>
-                <Link href="/team" className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-team">
+                <Link href="/team" className="text-left text-white hover:text-yellow-400 transition-colors font-medium text-lg" data-testid="mobile-nav-team">
                   Our Team
                 </Link>
-                <button onClick={() => navigateToSection('contact')} className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-contact">
+                <button onClick={() => navigateToSection('contact')} className="text-left text-white hover:text-yellow-400 transition-colors font-medium text-lg" data-testid="mobile-nav-contact">
                   Contact
                 </button>
                 
