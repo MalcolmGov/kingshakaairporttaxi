@@ -46,7 +46,7 @@ export default function Footer() {
               Over a decade of experience delivering clients safely and timeously throughout KwaZulu-Natal. Your trusted transportation partner with zero comebacks and zero safety incidents.
             </p>
             <div className="flex space-x-4" data-testid="social-links">
-              <a href="#" className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center hover:from-blue-400 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1" data-testid="link-facebook">
+              <a href="https://www.facebook.com/KingShakaAirportTaxi?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center hover:from-blue-400 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1" data-testid="link-facebook">
                 <Facebook className="text-white w-6 h-6" />
               </a>
               <a href="#" className="w-12 h-12 bg-gradient-to-br from-sky-500 to-sky-700 rounded-xl flex items-center justify-center hover:from-sky-400 hover:to-sky-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1" data-testid="link-twitter">
