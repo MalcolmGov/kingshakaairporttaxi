@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Shield, Clock, Users, CheckCircle, Star } from "lucide-react";
-import logoImage from "../assets/logo.png";
+import logoImage from "../assets/king-shaka-logo.png";
 
 export default function About() {
   const features = [
