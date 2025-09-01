@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Plane, Menu, Phone } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,6 +41,9 @@ export default function Header() {
             <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-about">
               About
             </button>
+            <Link href="/team" className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-team">
+              Our Team
+            </Link>
             <button onClick={() => scrollToSection('reviews')} className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-reviews">
               Reviews
             </button>
@@ -81,6 +85,9 @@ export default function Header() {
                 <button onClick={() => scrollToSection('about')} className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-about">
                   About
                 </button>
+                <Link href="/team" className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-team">
+                  Our Team
+                </Link>
                 <button onClick={() => scrollToSection('reviews')} className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-reviews">
                   Reviews
                 </button>
