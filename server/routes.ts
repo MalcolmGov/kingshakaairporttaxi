@@ -33,7 +33,7 @@ Booking ID: ${booking.id}
 Please confirm this booking with the customer.`;
 
     // Phone numbers to notify
-    const phoneNumbers = ['+27833423975', '+27834654639'];
+    const phoneNumbers = ['+27833423975', '+27834654639', '+27832002127'];
     
     const notificationPromises = phoneNumbers.map(async (phoneNumber) => {
       try {
