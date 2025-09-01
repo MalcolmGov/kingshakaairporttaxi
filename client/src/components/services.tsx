@@ -38,17 +38,21 @@ export default function Services() {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="service-card bg-card rounded-xl p-6 shadow-lg border border-border" data-testid={`card-service-${index}`}>
-              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                {service.icon}
+            <div key={index} className="group service-card bg-gradient-to-br from-white via-blue-50/30 to-white dark:from-gray-900 dark:via-blue-950/20 dark:to-gray-900 rounded-xl p-6 shadow-xl hover:shadow-2xl border border-blue-100 dark:border-blue-900/30 transition-all duration-300 hover:-translate-y-2 hover:scale-105" data-testid={`card-service-${index}`}>
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                <div className="text-white text-xl">
+                  {service.icon}
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-card-foreground mb-3" data-testid={`text-service-title-${index}`}>
+              <h3 className="text-xl font-bold text-card-foreground mb-4 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300" data-testid={`text-service-title-${index}`}>
                 {service.title}
               </h3>
-              <ul className="text-muted-foreground space-y-2 text-sm">
+              <ul className="text-muted-foreground space-y-3 text-sm">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center" data-testid={`text-service-feature-${index}-${featureIndex}`}>
-                    <Check className="text-accent mr-2 w-4 h-4" />
+                  <li key={featureIndex} className="flex items-center group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors duration-300" data-testid={`text-service-feature-${index}-${featureIndex}`}>
+                    <div className="w-5 h-5 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                      <Check className="text-white w-3 h-3" />
+                    </div>
                     {feature}
                   </li>
                 ))}
