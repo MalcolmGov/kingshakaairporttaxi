@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Plane, Menu, Phone } from "lucide-react";
+import { Menu, Phone } from "lucide-react";
 import { Link, useLocation } from "wouter";
 
 export default function Header() {
@@ -34,9 +34,12 @@ export default function Header() {
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3" data-testid="logo-container">
-            <div className="w-10 h-10 lg:w-12 lg:h-12 bg-primary rounded-lg flex items-center justify-center">
-              <Plane className="text-primary-foreground w-5 h-5 lg:w-6 lg:h-6" />
-            </div>
+            <img 
+              src="@assets/Screenshot 2025-09-01 045323_1756698561444.png" 
+              alt="King Shaka Airport Taxi Logo" 
+              className="h-10 lg:h-12 w-auto"
+              data-testid="logo-image"
+            />
             <div className="flex flex-col">
               <span className="font-bold text-lg lg:text-xl text-foreground">King Shaka Airport Taxi</span>
               <span className="text-xs lg:text-sm text-muted-foreground">Reliable & Affordable Rides in KZN</span>

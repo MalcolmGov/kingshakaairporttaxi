@@ -1,4 +1,4 @@
-import { Plane, Phone, Mail, MapPin, Facebook, Twitter } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Twitter } from "lucide-react";
 import { MessageCircle } from "lucide-react";
 
 export default function Footer() {
@@ -16,9 +16,12 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2" data-testid="footer-company-info">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                <Plane className="text-accent-foreground w-5 h-5" />
-              </div>
+              <img 
+                src="@assets/Screenshot 2025-09-01 045323_1756698561444.png" 
+                alt="King Shaka Airport Taxi Logo" 
+                className="h-10 w-auto filter brightness-0 invert"
+                data-testid="footer-logo-image"
+              />
               <div>
                 <h3 className="font-bold text-lg" data-testid="text-footer-company-name">King Shaka Airport Taxi</h3>
                 <p className="text-background/70 text-sm" data-testid="text-footer-tagline">Serving KZN with pride since 2010</p>
