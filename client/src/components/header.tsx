@@ -2,15 +2,28 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Plane, Menu, Phone } from "lucide-react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [location, navigate] = useLocation();
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const navigateToSection = (sectionId: string) => {
+    if (location !== '/') {
+      // If not on home page, navigate to home first, then scroll
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // If on home page, just scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     setIsOpen(false);
   };
@@ -32,22 +45,22 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8" data-testid="nav-desktop">
-            <button onClick={() => scrollToSection('home')} className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-home">
+            <Link href="/" className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-home">
               Home
-            </button>
-            <button onClick={() => scrollToSection('services')} className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-services">
+            </Link>
+            <button onClick={() => navigateToSection('services')} className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-services">
               Services
             </button>
-            <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-about">
+            <button onClick={() => navigateToSection('about')} className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-about">
               About
             </button>
             <Link href="/team" className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-team">
               Our Team
             </Link>
-            <button onClick={() => scrollToSection('reviews')} className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-reviews">
+            <button onClick={() => navigateToSection('reviews')} className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-reviews">
               Reviews
             </button>
-            <button onClick={() => scrollToSection('contact')} className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-contact">
+            <button onClick={() => navigateToSection('contact')} className="text-foreground hover:text-primary transition-colors font-medium" data-testid="nav-contact">
               Contact
             </button>
           </nav>
@@ -59,7 +72,7 @@ export default function Header() {
               +27 83 342 3975
             </a>
             <Button 
-              onClick={() => scrollToSection('booking')} 
+              onClick={() => navigateToSection('booking')} 
               className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200"
               data-testid="button-book-now"
             >
@@ -76,22 +89,22 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="left" className="w-[300px] sm:w-[400px]" data-testid="sheet-mobile-menu">
               <nav className="flex flex-col space-y-6 mt-8">
-                <button onClick={() => scrollToSection('home')} className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-home">
+                <Link href="/" className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-home">
                   Home
-                </button>
-                <button onClick={() => scrollToSection('services')} className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-services">
+                </Link>
+                <button onClick={() => navigateToSection('services')} className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-services">
                   Services
                 </button>
-                <button onClick={() => scrollToSection('about')} className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-about">
+                <button onClick={() => navigateToSection('about')} className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-about">
                   About
                 </button>
                 <Link href="/team" className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-team">
                   Our Team
                 </Link>
-                <button onClick={() => scrollToSection('reviews')} className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-reviews">
+                <button onClick={() => navigateToSection('reviews')} className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-reviews">
                   Reviews
                 </button>
-                <button onClick={() => scrollToSection('contact')} className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-contact">
+                <button onClick={() => navigateToSection('contact')} className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg" data-testid="mobile-nav-contact">
                   Contact
                 </button>
                 
@@ -101,7 +114,7 @@ export default function Header() {
                     +27 83 342 3975
                   </a>
                   <Button 
-                    onClick={() => scrollToSection('booking')} 
+                    onClick={() => navigateToSection('booking')} 
                     className="w-full bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg"
                     data-testid="mobile-button-book"
                   >
