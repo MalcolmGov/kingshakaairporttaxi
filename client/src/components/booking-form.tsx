@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent } from "@/components/ui/card";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -20,11 +21,19 @@ const bookingFormSchema = insertBookingSchema.extend({
     today.setHours(0, 0, 0, 0);
     return selectedDate >= today;
   }, "Please select a future date"),
+  returnDate: insertBookingSchema.shape.returnDate.optional().refine((date) => {
+    if (!date) return true;
+    const selectedDate = new Date(date);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return selectedDate >= today;
+  }, "Please select a future return date"),
 });
 
 export default function BookingForm() {
   const [showWhatsAppConfirmation, setShowWhatsAppConfirmation] = useState(false);
   const [lastBookingData, setLastBookingData] = useState<InsertBooking | null>(null);
+  const [isReturnTrip, setIsReturnTrip] = useState(false);
   const { toast } = useToast();
 
   const form = useForm<InsertBooking>({
@@ -38,6 +47,9 @@ export default function BookingForm() {
       vehicleType: "",
       contactNumber: "",
       name: "",
+      isReturnTrip: "false",
+      returnDate: "",
+      returnTime: "",
     },
   });
 
@@ -53,6 +65,10 @@ export default function BookingForm() {
 
   // WhatsApp message formatting function
   const formatBookingMessage = (data: InsertBooking) => {
+    const returnTripInfo = data.isReturnTrip === "true" && data.returnDate && data.returnTime 
+      ? `\n🔄 RETURN TRIP:\n📅 Return Date: ${data.returnDate}\n🕐 Return Time: ${data.returnTime}\n`
+      : "";
+      
     return `🚗 TAXI BOOKING REQUEST
 
 👤 Name: ${data.name}
@@ -61,7 +77,7 @@ export default function BookingForm() {
 📍 From: ${data.pickup}
 📍 To: ${data.destination}
 📅 Date: ${data.date}
-🕐 Time: ${data.time}
+🕐 Time: ${data.time}${returnTripInfo}
 👥 Passengers: ${data.passengers}
 🚙 Vehicle: ${data.vehicleType}
 📍 Route: ${data.pickup} → ${data.destination}
@@ -232,6 +248,88 @@ King Shaka Airport Taxi - Since 2010`;
                       </FormItem>
                     )}
                   />
+
+                  {/* Return Trip Checkbox */}
+                  <FormField
+                    control={form.control}
+                    name="isReturnTrip"
+                    render={({ field }) => (
+                      <FormItem className="sm:col-span-2 flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+                        <FormControl>
+                          <Checkbox
+                            checked={field.value === "true"}
+                            onCheckedChange={(checked) => {
+                              field.onChange(checked ? "true" : "false");
+                              setIsReturnTrip(checked === true);
+                              if (!checked) {
+                                form.setValue("returnDate", "");
+                                form.setValue("returnTime", "");
+                              }
+                            }}
+                            data-testid="checkbox-return-trip"
+                          />
+                        </FormControl>
+                        <div className="space-y-1 leading-none">
+                          <FormLabel className="cursor-pointer">
+                            Return Trip
+                          </FormLabel>
+                          <p className="text-sm text-muted-foreground">
+                            Select this if you need a return journey
+                          </p>
+                        </div>
+                      </FormItem>
+                    )}
+                  />
+
+                  {/* Return Date - Only show if return trip is selected */}
+                  {isReturnTrip && (
+                    <FormField
+                      control={form.control}
+                      name="returnDate"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Return Date</FormLabel>
+                          <FormControl>
+                            <div className="relative">
+                              <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+                              <Input 
+                                type="date" 
+                                className="pl-10 min-h-[44px]"
+                                data-testid="input-return-date"
+                                {...field} 
+                              />
+                            </div>
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  )}
+
+                  {/* Return Time - Only show if return trip is selected */}
+                  {isReturnTrip && (
+                    <FormField
+                      control={form.control}
+                      name="returnTime"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Return Time</FormLabel>
+                          <FormControl>
+                            <div className="relative">
+                              <Clock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+                              <Input 
+                                type="time" 
+                                className="pl-10 min-h-[44px]"
+                                data-testid="input-return-time"
+                                {...field} 
+                              />
+                            </div>
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  )}
                   
                   <FormField
                     control={form.control}

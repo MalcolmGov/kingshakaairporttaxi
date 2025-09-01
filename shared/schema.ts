@@ -21,6 +21,9 @@ export const bookings = pgTable("bookings", {
   name: text("name").notNull(),
   estimatedPrice: integer("estimated_price").notNull(),
   status: text("status").notNull().default("pending"),
+  isReturnTrip: text("is_return_trip").default("false"),
+  returnDate: text("return_date"),
+  returnTime: text("return_time"),
   createdAt: timestamp("created_at").defaultNow(),
 });
 
