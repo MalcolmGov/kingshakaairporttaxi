@@ -90,10 +90,19 @@ King Shaka Airport Taxi - Since 2010 🚗✨`;
   const handleWhatsAppBooking = () => {
     if (!lastBookingData) return;
     
-    const phoneNumber = "+27833423975"; // Primary contact number
+    const primaryNumber = "+27833423975"; // Primary contact number
+    const secondaryNumber = "+27834654639"; // Secondary contact number
     const message = formatBookingMessage(lastBookingData);
-    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
+    
+    // Open WhatsApp with primary number
+    const whatsappUrl = `https://wa.me/${primaryNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
+    
+    // Also open WhatsApp with secondary number (with slight delay)
+    setTimeout(() => {
+      const secondaryWhatsappUrl = `https://wa.me/${secondaryNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
+      window.open(secondaryWhatsappUrl, '_blank');
+    }, 1000);
   };
 
   // Booking submission mutation
