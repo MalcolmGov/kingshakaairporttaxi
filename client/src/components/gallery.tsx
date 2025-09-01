@@ -163,11 +163,11 @@ export default function Gallery() {
             data-testid="carousel-container"
           >
             {/* Main Image Display */}
-            <div className="relative aspect-[16/9] sm:aspect-[21/9]">
+            <div className="relative aspect-[4/3] sm:aspect-[16/9] bg-gray-100">
               <img
                 src={galleryImages[currentIndex].src}
                 alt={galleryImages[currentIndex].alt}
-                className="w-full h-full object-cover transition-opacity duration-500"
+                className="w-full h-full object-contain transition-opacity duration-500"
                 data-testid={`carousel-image-${currentIndex}`}
               />
               
