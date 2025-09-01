@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Car, Phone, Shield, Clock, Star } from "lucide-react";
+import taxiBackground from "@assets/fotis-fotopoulos-7_r85l4eht8-unsplash_1756694465376.jpg";
 
 export default function Hero() {
   const scrollToBooking = () => {
@@ -15,7 +16,7 @@ export default function Hero() {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80')"
+          backgroundImage: `url(${taxiBackground})`
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
