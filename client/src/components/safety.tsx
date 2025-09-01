@@ -1,5 +1,5 @@
 import { Tag, Shield, Clock, Heart } from "lucide-react";
-import taxiServiceImage from "../assets/taxi-service-professional.png";
+import airportImage from "../assets/king-shaka-airport-building.png";
 
 export default function Safety() {
   const safetyFeatures = [
@@ -58,10 +58,10 @@ export default function Safety() {
           
           <div className="relative">
             <img 
-              src={taxiServiceImage} 
-              alt="Professional taxi driver helping passenger with luggage" 
+              src={airportImage} 
+              alt="King Shaka International Airport terminal building" 
               className="rounded-xl shadow-2xl w-full"
-              data-testid="img-professional-service"
+              data-testid="img-airport-building"
             />
             
             <div className="absolute -bottom-6 -left-6 bg-card border border-border rounded-xl p-4 shadow-xl" data-testid="badge-experience">
