@@ -11,8 +11,22 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-foreground text-background py-16" data-testid="footer-main">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white py-16 overflow-hidden" data-testid="footer-main">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-yellow-400"></div>
+        <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-orange-400"></div>
+        <div className="absolute bottom-20 left-1/4 w-36 h-36 rounded-full bg-blue-400"></div>
+        <div className="absolute bottom-10 right-1/3 w-28 h-28 rounded-full bg-yellow-300"></div>
+      </div>
+      
+      {/* Geometric Shapes */}
+      <div className="absolute inset-0 opacity-3">
+        <div className="absolute top-32 left-1/3 w-16 h-16 rotate-45 bg-gradient-to-r from-yellow-400 to-orange-500"></div>
+        <div className="absolute bottom-32 right-1/4 w-12 h-12 rotate-12 bg-gradient-to-r from-blue-400 to-purple-500"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div className="lg:col-span-2" data-testid="footer-company-info">
@@ -32,21 +46,24 @@ export default function Footer() {
               Over a decade of experience delivering clients safely and timeously throughout KwaZulu-Natal. Your trusted transportation partner with zero comebacks and zero safety incidents.
             </p>
             <div className="flex space-x-4" data-testid="social-links">
-              <a href="#" className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary/80 transition-colors" data-testid="link-facebook">
-                <Facebook className="text-primary-foreground w-5 h-5" />
+              <a href="#" className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center hover:from-blue-400 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1" data-testid="link-facebook">
+                <Facebook className="text-white w-6 h-6" />
               </a>
-              <a href="#" className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary/80 transition-colors" data-testid="link-twitter">
-                <Twitter className="text-primary-foreground w-5 h-5" />
+              <a href="#" className="w-12 h-12 bg-gradient-to-br from-sky-500 to-sky-700 rounded-xl flex items-center justify-center hover:from-sky-400 hover:to-sky-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1" data-testid="link-twitter">
+                <Twitter className="text-white w-6 h-6" />
               </a>
-              <a href="https://wa.me/27833423975" className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors" data-testid="link-whatsapp">
-                <MessageCircle className="text-white w-5 h-5" />
+              <a href="https://wa.me/27833423975" className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center hover:from-green-400 hover:to-green-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1" data-testid="link-whatsapp">
+                <MessageCircle className="text-white w-6 h-6" />
               </a>
             </div>
           </div>
           
           {/* Quick Links */}
           <div data-testid="footer-quick-links">
-            <h4 className="font-semibold text-lg mb-4">Airport Transfer Services</h4>
+            <h4 className="font-bold text-lg mb-6 text-white relative">
+              <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent">Airport Transfer Services</span>
+              <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
+            </h4>
             <ul className="space-y-3">
               <li><button onClick={() => scrollToSection('services')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-link-services">King Shaka Airport Taxi</button></li>
               <li><button onClick={() => scrollToSection('booking')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-link-booking">Book Airport Transfer</button></li>
@@ -58,7 +75,10 @@ export default function Footer() {
           
           {/* Popular Routes */}
           <div data-testid="footer-popular-routes">
-            <h4 className="font-semibold text-lg mb-4">Popular KZN Destinations</h4>
+            <h4 className="font-bold text-lg mb-6 text-white relative">
+              <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent">Popular KZN Destinations</span>
+              <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
+            </h4>
             <ul className="space-y-3">
               <li><button onClick={() => scrollToSection('booking')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-route-durban">Durban CBD Transfer</button></li>
               <li><button onClick={() => scrollToSection('booking')} className="text-background/80 hover:text-accent transition-colors" data-testid="footer-route-umhlanga">Umhlanga Ridge</button></li>
@@ -70,19 +90,28 @@ export default function Footer() {
           
           {/* Contact Info */}
           <div data-testid="footer-contact-info">
-            <h4 className="font-semibold text-lg mb-4">24/7 Contact Info</h4>
-            <div className="space-y-3">
-              <div className="flex items-center" data-testid="footer-phone">
-                <Phone className="text-accent mr-3 w-4 h-4" />
-                <span className="text-background/80">+27 83 342 3975</span>
+            <h4 className="font-bold text-lg mb-6 text-white relative">
+              <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent">24/7 Contact Info</span>
+              <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
+            </h4>
+            <div className="space-y-4">
+              <div className="flex items-center group hover:bg-white/5 p-3 rounded-lg transition-colors duration-300" data-testid="footer-phone">
+                <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-700 rounded-lg flex items-center justify-center mr-4 shadow-lg">
+                  <Phone className="text-white w-5 h-5" />
+                </div>
+                <span className="text-white font-medium group-hover:text-yellow-300 transition-colors">+27 83 342 3975</span>
               </div>
-              <div className="flex items-center" data-testid="footer-email">
-                <Mail className="text-accent mr-3 w-4 h-4" />
-                <span className="text-background/80">info@kingshakataxi.co.za</span>
+              <div className="flex items-center group hover:bg-white/5 p-3 rounded-lg transition-colors duration-300" data-testid="footer-email">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center mr-4 shadow-lg">
+                  <Mail className="text-white w-5 h-5" />
+                </div>
+                <span className="text-white font-medium group-hover:text-yellow-300 transition-colors">info@kingshakataxi.co.za</span>
               </div>
-              <div className="flex items-start" data-testid="footer-address">
-                <MapPin className="text-accent mr-3 w-4 h-4 mt-1" />
-                <span className="text-background/80">
+              <div className="flex items-start group hover:bg-white/5 p-3 rounded-lg transition-colors duration-300" data-testid="footer-address">
+                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-4 shadow-lg flex-shrink-0 mt-0">
+                  <MapPin className="text-white w-5 h-5" />
+                </div>
+                <span className="text-white font-medium group-hover:text-yellow-300 transition-colors">
                   King Shaka International Airport<br />
                   KwaZulu-Natal, South Africa
                 </span>
