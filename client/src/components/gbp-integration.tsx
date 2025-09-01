@@ -9,7 +9,7 @@ export default function GBPIntegration() {
   };
 
   const openGoogleBusiness = () => {
-    const businessUrl = "https://g.page/r/CQoUqY8j_R2mEAg";
+    const businessUrl = "https://share.google/n2xxyy5tgFRSs1XB2";
     window.open(businessUrl, '_blank');
   };
 
