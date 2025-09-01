@@ -4,12 +4,85 @@ import { storage } from "./storage";
 import { insertBookingSchema, insertContactMessageSchema } from "@shared/schema";
 import { z } from "zod";
 import twilio from "twilio";
+import sgMail from "@sendgrid/mail";
 
 // Initialize Twilio client
 const twilioClient = twilio(
   process.env.TWILIO_ACCOUNT_SID,
   process.env.TWILIO_AUTH_TOKEN
 );
+
+// Initialize SendGrid
+if (process.env.SENDGRID_API_KEY) {
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+}
+
+// Email notification function
+async function sendEmailNotification(booking: any) {
+  try {
+    if (!process.env.SENDGRID_API_KEY) {
+      console.log('SendGrid API key not configured, skipping email notification');
+      return;
+    }
+
+    const htmlContent = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
+        <div style="background-color: #1e40af; color: white; padding: 20px; border-radius: 8px 8px 0 0;">
+          <h1 style="margin: 0; font-size: 24px;">🚖 New Booking Request</h1>
+          <p style="margin: 5px 0 0 0; opacity: 0.9;">King Shaka Airport Taxi</p>
+        </div>
+        
+        <div style="background-color: white; padding: 30px; border-radius: 0 0 8px 8px; border: 1px solid #e5e7eb;">
+          <h2 style="color: #1e40af; margin-top: 0;">Booking Details</h2>
+          
+          <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <p><strong>Customer:</strong> ${booking.customerName}</p>
+            <p><strong>Phone:</strong> ${booking.customerPhone}</p>
+          </div>
+          
+          <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <p><strong>Pickup:</strong> ${booking.pickup}</p>
+            <p><strong>Destination:</strong> ${booking.destination}</p>
+          </div>
+          
+          <div style="display: flex; gap: 20px; margin: 20px 0;">
+            <div style="background-color: #f3f4f6; padding: 15px; border-radius: 8px; flex: 1;">
+              <p><strong>Date:</strong> ${new Date(booking.date).toLocaleDateString('en-ZA')}</p>
+              <p><strong>Time:</strong> ${booking.time}</p>
+            </div>
+            <div style="background-color: #f3f4f6; padding: 15px; border-radius: 8px; flex: 1;">
+              <p><strong>Passengers:</strong> ${booking.passengers}</p>
+              <p><strong>Vehicle:</strong> ${booking.vehicleType || 'Any available'}</p>
+            </div>
+          </div>
+          
+          <div style="background-color: #dcfce7; border: 2px solid #16a34a; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <p style="margin: 0; font-size: 18px; color: #16a34a;"><strong>Estimated Price: R${booking.estimatedPrice}</strong></p>
+            <p style="margin: 5px 0 0 0; color: #16a34a;">Booking ID: ${booking.id}</p>
+          </div>
+          
+          <div style="background-color: #fef3c7; border: 2px solid #f59e0b; padding: 15px; border-radius: 8px;">
+            <p style="margin: 0; color: #92400e;"><strong>Action Required:</strong> Please contact the customer to confirm this booking.</p>
+          </div>
+        </div>
+      </div>
+    `;
+
+    const msg = {
+      to: 'info@kingshakaairporttaxi.co.za',
+      from: 'bookings@kingshakaairporttaxi.co.za', // This should be a verified sender
+      subject: `New Booking Request - ${booking.customerName} (R${booking.estimatedPrice})`,
+      text: `NEW BOOKING REQUEST\n\nCustomer: ${booking.customerName}\nPhone: ${booking.customerPhone}\n\nPickup: ${booking.pickup}\nDestination: ${booking.destination}\n\nDate: ${new Date(booking.date).toLocaleDateString('en-ZA')}\nTime: ${booking.time}\nPassengers: ${booking.passengers}\nVehicle: ${booking.vehicleType || 'Any available'}\n\nEstimated Price: R${booking.estimatedPrice}\nBooking ID: ${booking.id}\n\nPlease confirm this booking with the customer.`,
+      html: htmlContent,
+    };
+
+    const result = await sgMail.send(msg);
+    console.log('✅ Email notification sent via SendGrid - Status:', result[0].statusCode);
+    
+  } catch (error) {
+    console.error('❌ Failed to send email notification:', error);
+  }
+}
 
 // Notification function with WhatsApp and SMS backup
 async function sendBookingNotification(booking: any) {
@@ -90,8 +163,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const validatedData = insertBookingSchema.parse(req.body);
       const booking = await storage.createBooking(validatedData);
       
-      // Send booking notification after successful booking creation
-      await sendBookingNotification(booking);
+      // Send both WhatsApp and email notifications after successful booking creation
+      await Promise.all([
+        sendBookingNotification(booking),
+        sendEmailNotification(booking)
+      ]);
       
       res.json(booking);
     } catch (error) {
