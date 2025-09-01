@@ -44,12 +44,11 @@ export default function Hero() {
             </Button>
             <Button 
               asChild
-              variant="secondary"
-              className="w-full sm:w-auto bg-primary-foreground text-primary px-8 py-4 text-lg hover:bg-primary-foreground/90 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 min-h-[44px]"
+              className="w-full sm:w-auto bg-primary text-primary-foreground px-8 py-4 text-lg font-semibold hover:bg-primary/90 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 min-h-[56px]"
               data-testid="button-call-now"
             >
-              <a href="tel:+27833423975">
-                <Phone className="w-5 h-5 mr-2" />
+              <a href="tel:+27833423975" className="flex items-center justify-center">
+                <Phone className="w-5 h-5 mr-3" />
                 Call Now: +27 83 342 3975
               </a>
             </Button>
