@@ -108,20 +108,26 @@ King Shaka Airport Taxi - Since 2010`;
       return response.json();
     },
     onSuccess: (_, variables) => {
-      // Store booking data including the estimated price
+      // Store booking data and immediately open WhatsApp
       const bookingDataWithPrice = { ...variables, estimatedPrice: estimatedPrice || 0 };
       setLastBookingData(bookingDataWithPrice);
-      setShowWhatsAppConfirmation(true);
       
       console.log('Booking submitted successfully:', bookingDataWithPrice);
       
+      // Immediately open WhatsApp with booking details
+      const primaryNumber = "27833423975";
+      const message = formatBookingMessage(bookingDataWithPrice);
+      const whatsappWebUrl = `https://web.whatsapp.com/send?phone=${primaryNumber}&text=${encodeURIComponent(message)}`;
+      window.open(whatsappWebUrl, '_blank');
+      
       toast({
-        title: "Booking Confirmed!",
-        description: "We'll contact you shortly to confirm your ride details.",
+        title: "Booking Sent to WhatsApp!",
+        description: "Your booking details have been opened in WhatsApp. Send the message to confirm your ride.",
       });
       
-      // Don't reset form immediately to preserve data for WhatsApp
-      // Form will reset when user closes the confirmation
+      // Reset form after successful submission
+      form.reset();
+      setEstimatedPrice(null);
     },
     onError: () => {
       toast({
@@ -393,51 +399,12 @@ King Shaka Airport Taxi - Since 2010`;
                     <Button 
                       type="submit" 
                       disabled={bookingMutation.isPending || !estimatedPrice}
-                      className="w-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200 min-h-[44px]"
-                      data-testid="button-confirm-booking"
+                      className="w-full bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200 min-h-[44px]"
+                      data-testid="button-whatsapp-booking"
                     >
-                      <CalendarCheck className="w-5 h-5 mr-2" />
-                      {bookingMutation.isPending ? "Processing..." : "Confirm Booking"}
+                      <MessageCircle className="w-5 h-5 mr-2" />
+                      {bookingMutation.isPending ? "Sending to WhatsApp..." : "📱 Send Booking to WhatsApp"}
                     </Button>
-
-                    {/* WhatsApp Confirmation Section */}
-                    {showWhatsAppConfirmation && (
-                      <div className="bg-green-50 border border-green-200 rounded-lg p-6 space-y-4" data-testid="whatsapp-confirmation">
-                        <div className="text-center">
-                          <h3 className="text-lg font-semibold text-green-800 mb-2" data-testid="text-booking-success">
-                            🎉 Booking Submitted Successfully!
-                          </h3>
-                          <p className="text-green-700 mb-4" data-testid="text-whatsapp-instruction">
-                            Click below to send your booking details via WhatsApp for instant confirmation:
-                          </p>
-                        </div>
-                        
-                        <Button 
-                          onClick={handleWhatsAppBooking}
-                          className="w-full bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200 min-h-[44px]"
-                          data-testid="button-whatsapp-booking"
-                        >
-                          <MessageCircle className="w-5 h-5 mr-2" />
-                          📱 Send Booking to WhatsApp
-                        </Button>
-                        
-                        <div className="text-center">
-                          <Button 
-                            variant="ghost"
-                            onClick={() => {
-                              setShowWhatsAppConfirmation(false);
-                              setLastBookingData(null);
-                              form.reset();
-                              setEstimatedPrice(null);
-                            }}
-                            className="text-muted-foreground hover:text-foreground"
-                            data-testid="button-close-confirmation"
-                          >
-                            Close
-                          </Button>
-                        </div>
-                      </div>
-                    )}
                   </div>
                 </form>
               </Form>
