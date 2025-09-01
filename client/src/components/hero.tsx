@@ -36,7 +36,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
             <Button 
               onClick={scrollToBooking}
-              className="w-full sm:w-auto bg-accent text-accent-foreground px-8 py-4 text-lg hover:bg-accent/90 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 min-h-[44px]"
+              className="w-full sm:w-auto bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 text-black font-semibold px-8 py-4 text-lg hover:from-yellow-300 hover:via-orange-300 hover:to-yellow-400 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 min-h-[44px] border-2 border-yellow-300"
               data-testid="button-book-ride"
             >
               <Car className="w-5 h-5 mr-2" />
