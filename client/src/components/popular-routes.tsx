@@ -19,9 +19,9 @@ export default function PopularRoutes() {
       description: "Short drive to beautiful Ballito coastal resorts"
     },
     {
-      route: "King Shaka Airport to Gateway Mall",
+      route: "Margate to Port Shepstone",
       duration: "30 minutes",
-      description: "Shopping and entertainment destination transfer"
+      description: "Coastal South Coast route transfer"
     },
     {
       route: "King Shaka Airport to Pietermaritzburg",
