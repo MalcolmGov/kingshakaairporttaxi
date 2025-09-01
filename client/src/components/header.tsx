@@ -43,7 +43,7 @@ export default function Header() {
             />
             <div className="flex flex-col">
               <span className="font-bold text-sm sm:text-lg lg:text-xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent leading-tight">King Shaka Airport Taxi</span>
-              <span className="text-xs lg:text-sm text-muted-foreground hidden sm:block">Reliable & Affordable Rides in KZN</span>
+              <span className="text-xs lg:text-sm text-black hidden sm:block">Reliable & Affordable Rides in KZN</span>
             </div>
           </div>
 
