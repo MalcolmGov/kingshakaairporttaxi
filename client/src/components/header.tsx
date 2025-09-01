@@ -38,7 +38,7 @@ export default function Header() {
             <img 
               src={logoImage} 
               alt="King Shaka Airport Taxi Logo" 
-              className="h-8 sm:h-10 lg:h-12 w-auto"
+              className="h-12 sm:h-14 lg:h-16 w-auto"
               data-testid="logo-image"
             />
             <div className="flex flex-col">

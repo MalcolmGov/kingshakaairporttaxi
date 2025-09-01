@@ -34,7 +34,7 @@ export default function Footer() {
               <img 
                 src={logoImage} 
                 alt="King Shaka Airport Taxi Logo" 
-                className="h-10 w-auto"
+                className="h-12 w-auto"
                 data-testid="footer-logo-image"
               />
               <div>
