@@ -278,34 +278,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Price calculation endpoint
-  app.post("/api/calculate-price", async (req, res) => {
-    try {
-      const { pickup, destination, passengers } = req.body;
-      
-      // Simple price calculation logic - in real app this would use distance/location APIs
-      let basePrice = 150; // Base rate in ZAR
-      
-      // Airport transfers have fixed rates
-      if (pickup.toLowerCase().includes("airport") || destination.toLowerCase().includes("airport")) {
-        basePrice = 300;
-      }
-      
-      // Distance multiplier (simplified - real implementation would use Google Maps API)
-      if (pickup.toLowerCase().includes("durban") && destination.toLowerCase().includes("pietermaritzburg")) {
-        basePrice = 500;
-      }
-      
-      // Passenger surcharge
-      if (passengers > 2) {
-        basePrice += (passengers - 2) * 50;
-      }
-      
-      res.json({ estimatedPrice: basePrice });
-    } catch (error) {
-      res.status(500).json({ message: "Failed to calculate price" });
-    }
-  });
 
   // WhatsApp webhook to handle Accept/Reject responses
   app.post("/api/whatsapp/webhook", async (req, res) => {
