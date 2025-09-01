@@ -103,14 +103,18 @@ King Shaka Airport Taxi - Since 2010 🚗✨`;
       return response.json();
     },
     onSuccess: (_, variables) => {
+      // Store booking data BEFORE resetting form
       setLastBookingData(variables);
       setShowWhatsAppConfirmation(true);
       toast({
         title: "Booking Confirmed!",
         description: "We'll contact you shortly to confirm your ride details.",
       });
-      form.reset();
-      setEstimatedPrice(null);
+      // Reset form after storing data
+      setTimeout(() => {
+        form.reset();
+        setEstimatedPrice(null);
+      }, 100);
     },
     onError: () => {
       toast({
