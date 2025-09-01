@@ -1,10 +1,10 @@
 export default function KznDestinations() {
   const destinations = [
     {
-      name: "Drakensberg Mountains Tour",
-      description: "Airport transfer to breathtaking mountain ranges",
-      image: "https://pixabay.com/get/g7f189d3661e57fddacce8aad0b1021bd81fdd5e71f8d96f6a5501ddaaf873edcf95d164d5662950b306fdee78041d5ca17e50f603a17b82f6cb8e04f007bceef_1280.jpg",
-      alt: "King Shaka Airport taxi to Drakensberg Mountains"
+      name: "Hluhluwe Game Reserve Tour",
+      description: "Wildlife sanctuary transfer to Africa's oldest game reserve",
+      image: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      alt: "King Shaka Airport taxi to Hluhluwe Game Reserve"
     },
     {
       name: "Durban Beachfront Transfer",
@@ -28,7 +28,7 @@ export default function KznDestinations() {
             KZN Tourist Transport & City Tours
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto" data-testid="text-destinations-subtitle">
-            Professional tourist transport to KwaZulu-Natal's top destinations. Expert local guides, airport pickup included, custom sightseeing tours from King Shaka Airport to Drakensberg, Durban beachfront, and safari adventures.
+            Professional tourist transport to KwaZulu-Natal's top destinations. Expert local guides, airport pickup included, custom sightseeing tours from King Shaka Airport to Hluhluwe, Durban beachfront, and safari adventures.
           </p>
         </div>
         
