@@ -47,22 +47,7 @@ export default function About() {
   return (
     <section id="about" className="py-16 lg:py-24 bg-background" data-testid="section-about">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          <div>
-            <img 
-              src={logoImage} 
-              alt="King Shaka Airport Taxi Official Logo" 
-              className="rounded-xl shadow-2xl w-full mb-6 bg-white object-contain p-4"
-              data-testid="img-company-logo"
-            />
-            <img 
-              src={companyLogoClean} 
-              alt="King Shaka Airport Taxi clean company logo" 
-              className="rounded-xl shadow-2xl w-full"
-              data-testid="img-company-logo-clean"
-            />
-          </div>
-          
+        <div className="max-w-4xl mx-auto">
           <div>
             <div className="inline-flex items-center bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-medium mb-6" data-testid="badge-since-2010">
               <Calendar className="w-4 h-4 mr-2" />
