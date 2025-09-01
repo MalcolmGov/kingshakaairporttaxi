@@ -171,19 +171,6 @@ export default function Gallery() {
                 data-testid={`carousel-image-${currentIndex}`}
               />
               
-              {/* Image Overlay with Title */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-6">
-                <h3 
-                  className="text-white text-xl sm:text-2xl font-bold mb-2"
-                  style={{ color: '#fbbf24' }}
-                  data-testid="text-carousel-title"
-                >
-                  {galleryImages[currentIndex].title}
-                </h3>
-                <p className="text-white/90 text-sm sm:text-base" data-testid="text-carousel-alt">
-                  {galleryImages[currentIndex].alt}
-                </p>
-              </div>
 
               {/* Navigation Arrows */}
               <button
