@@ -3,6 +3,46 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertBookingSchema, insertContactMessageSchema } from "@shared/schema";
 import { z } from "zod";
+import twilio from "twilio";
+
+// Initialize Twilio client
+const twilioClient = twilio(
+  process.env.TWILIO_ACCOUNT_SID,
+  process.env.TWILIO_AUTH_TOKEN
+);
+
+// WhatsApp notification function
+async function sendWhatsAppNotification(booking: any) {
+  try {
+    const message = `🚖 NEW BOOKING REQUEST
+
+👤 Customer: ${booking.customerName}
+📞 Phone: ${booking.customerPhone}
+
+📍 Pickup: ${booking.pickup}
+📍 Destination: ${booking.destination}
+
+📅 Date: ${new Date(booking.date).toLocaleDateString('en-ZA')}
+⏰ Time: ${booking.time}
+👥 Passengers: ${booking.passengers}
+🚗 Vehicle: ${booking.vehicleType || 'Any available'}
+
+💰 Estimated Price: R${booking.estimatedPrice}
+🆔 Booking ID: ${booking.id}
+
+✅ Please confirm this booking with the customer.`;
+
+    await twilioClient.messages.create({
+      body: message,
+      from: `whatsapp:${process.env.TWILIO_PHONE_NUMBER}`,
+      to: 'whatsapp:+27833423975'
+    });
+    
+    console.log('WhatsApp notification sent for booking:', booking.id);
+  } catch (error) {
+    console.error('Failed to send WhatsApp notification:', error);
+  }
+}
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Booking routes
@@ -10,6 +50,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = insertBookingSchema.parse(req.body);
       const booking = await storage.createBooking(validatedData);
+      
+      // Send WhatsApp notification after successful booking creation
+      await sendWhatsAppNotification(booking);
+      
       res.json(booking);
     } catch (error) {
       if (error instanceof z.ZodError) {
