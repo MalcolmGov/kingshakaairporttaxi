@@ -19,7 +19,7 @@ export default function Hero() {
           backgroundImage: `url(${taxiBackground})`
         }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/75"></div>
       </div>
       
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -29,8 +29,8 @@ export default function Hero() {
             <span className="text-accent drop-shadow-lg">Since 2010</span>
           </h1>
           
-          <p className="text-lg sm:text-xl lg:text-2xl text-white mb-6 sm:mb-8 lg:mb-12 max-w-3xl mx-auto leading-relaxed px-4" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }} data-testid="text-hero-subtitle">
-            Reliable Airport Transfers & Transport throughout KwaZulu-Natal. Licensed drivers, 24/7 availability, competitive rates. Your trusted Durban airport taxi partner.
+          <p className="text-lg sm:text-xl lg:text-2xl text-white mb-6 sm:mb-8 lg:mb-12 max-w-3xl mx-auto leading-relaxed px-4 font-medium" style={{ textShadow: '3px 3px 6px rgba(0,0,0,0.9)', filter: 'contrast(1.2)' }} data-testid="text-hero-subtitle">
+            Instant quotes for airport transfers. Fixed prices, professional drivers, 24/7 availability throughout KZN
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
