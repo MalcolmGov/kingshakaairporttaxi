@@ -43,7 +43,7 @@ export default function BookingForm() {
       destination: "",
       date: "",
       time: "",
-      passengers: 1,
+      passengers: "",
       vehicleType: "",
       contactNumber: "",
       name: "",
@@ -352,14 +352,11 @@ King Shaka Airport Taxi - Since 2010`;
                           <div className="relative">
                             <Users className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4 z-10" />
                             <Input 
-                              type="number"
-                              min="1"
-                              max="50"
-                              placeholder="Enter number of passengers"
+                              type="text"
+                              placeholder="e.g. 2 adults, 1 child"
                               className="pl-10 min-h-[44px]" 
                               data-testid="input-passengers"
-                              value={field.value || ''}
-                              onChange={(e) => field.onChange(parseInt(e.target.value) || 1)}
+                              {...field}
                             />
                           </div>
                         </FormControl>
