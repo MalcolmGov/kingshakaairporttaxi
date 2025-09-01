@@ -22,23 +22,23 @@ export default function Hero() {
         </div>
         
         {/* Transport icons background */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-1/4 left-1/4 w-20 h-20 md:w-24 md:h-24 bg-yellow-600 rounded-xl flex items-center justify-center transform rotate-12">
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-16 left-8 md:left-16 w-16 h-16 md:w-20 md:h-20 bg-yellow-500 rounded-lg flex items-center justify-center transform rotate-12 shadow-lg">
             <div className="text-black text-xs font-bold">PORT</div>
           </div>
-          <div className="absolute top-1/3 right-1/4 w-20 h-20 md:w-24 md:h-24 bg-yellow-600 rounded-xl flex items-center justify-center transform -rotate-6">
+          <div className="absolute top-20 right-8 md:right-16 w-16 h-16 md:w-20 md:h-20 bg-yellow-500 rounded-lg flex items-center justify-center transform -rotate-6 shadow-lg">
             <div className="text-black text-xs font-bold">AIRPORT</div>
           </div>
-          <div className="absolute bottom-1/3 left-1/5 w-20 h-20 md:w-24 md:h-24 bg-yellow-600 rounded-xl flex items-center justify-center transform rotate-45">
+          <div className="absolute bottom-32 md:bottom-40 left-4 md:left-12 w-16 h-16 md:w-20 md:h-20 bg-yellow-500 rounded-lg flex items-center justify-center transform rotate-45 shadow-lg">
             <div className="text-black text-xs font-bold">TRAIN</div>
           </div>
-          <div className="absolute bottom-1/4 right-1/3 w-20 h-20 md:w-24 md:h-24 bg-yellow-600 rounded-xl flex items-center justify-center transform -rotate-12">
+          <div className="absolute bottom-16 md:bottom-20 right-4 md:right-12 w-16 h-16 md:w-20 md:h-20 bg-yellow-500 rounded-lg flex items-center justify-center transform -rotate-12 shadow-lg">
             <div className="text-black text-xs font-bold">SHOPPING</div>
           </div>
-          <div className="absolute top-1/2 left-1/6 w-20 h-20 md:w-24 md:h-24 bg-yellow-600 rounded-xl flex items-center justify-center transform rotate-6">
+          <div className="absolute top-1/2 left-2 md:left-8 w-16 h-16 md:w-20 md:h-20 bg-yellow-500 rounded-lg flex items-center justify-center transform rotate-6 shadow-lg">
             <div className="text-black text-xs font-bold">HOTEL</div>
           </div>
-          <div className="absolute top-2/3 right-1/6 w-20 h-20 md:w-24 md:h-24 bg-yellow-600 rounded-xl flex items-center justify-center transform rotate-30">
+          <div className="absolute top-3/4 right-2 md:right-8 w-16 h-16 md:w-20 md:h-20 bg-yellow-500 rounded-lg flex items-center justify-center transform rotate-30 shadow-lg">
             <div className="text-black text-xs font-bold">HOME</div>
           </div>
         </div>
