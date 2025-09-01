@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Phone } from "lucide-react";
 import { Link, useLocation } from "wouter";
+import logoImage from "../assets/logo.png";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +36,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center space-x-3" data-testid="logo-container">
             <img 
-              src="@assets/Screenshot 2025-09-01 045323_1756698561444.png" 
+              src={logoImage} 
               alt="King Shaka Airport Taxi Logo" 
               className="h-10 lg:h-12 w-auto"
               data-testid="logo-image"

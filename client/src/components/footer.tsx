@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, Facebook, Twitter } from "lucide-react";
 import { MessageCircle } from "lucide-react";
+import logoImage from "../assets/logo.png";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -17,7 +18,7 @@ export default function Footer() {
           <div className="lg:col-span-2" data-testid="footer-company-info">
             <div className="flex items-center space-x-3 mb-6">
               <img 
-                src="@assets/Screenshot 2025-09-01 045323_1756698561444.png" 
+                src={logoImage} 
                 alt="King Shaka Airport Taxi Logo" 
                 className="h-10 w-auto filter brightness-0 invert"
                 data-testid="footer-logo-image"
