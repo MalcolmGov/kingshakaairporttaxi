@@ -55,23 +55,23 @@ export default function Hero() {
             Instant quotes for airport transfers. Fixed prices, professional drivers, 24/7 availability throughout KZN
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center items-center max-w-lg sm:max-w-none mx-auto">
             <Button 
               onClick={scrollToBooking}
-              className="w-full sm:w-auto bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 text-black font-semibold px-8 py-4 text-lg hover:from-yellow-300 hover:via-orange-300 hover:to-yellow-400 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 min-h-[44px] border-2 border-yellow-300"
+              className="w-full sm:w-auto bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 text-black font-bold px-6 py-5 text-base sm:text-lg hover:from-yellow-300 hover:via-orange-300 hover:to-yellow-400 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 min-h-[56px] border-2 border-yellow-300 rounded-xl"
               data-testid="button-book-ride"
             >
-              <Car className="w-5 h-5 mr-2" />
-              Book Your Ride
+              <Car className="w-5 h-5 mr-2 flex-shrink-0" />
+              <span>Book Your Ride</span>
             </Button>
             <Button 
               asChild
-              className="w-full sm:w-auto bg-primary text-primary-foreground px-8 py-4 text-lg font-semibold hover:bg-primary/90 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 min-h-[56px]"
+              className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-5 text-base sm:text-lg font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 min-h-[56px] border-2 border-blue-500 rounded-xl"
               data-testid="button-call-now"
             >
               <a href="tel:+27833423975" className="flex items-center justify-center">
-                <Phone className="w-5 h-5 mr-3" />
-                Call Now: +27 83 342 3975
+                <Phone className="w-5 h-5 mr-2 flex-shrink-0" />
+                <span className="whitespace-nowrap">Call: +27 83 342 3975</span>
               </a>
             </Button>
           </div>
