@@ -1,5 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Car } from "lucide-react";
+import vehicleHatchback from "../assets/vehicle-hatchback.jpeg";
+import vehicleSedan from "../assets/vehicle-sedan.jpeg";
+import vehicleSuv from "../assets/vehicle-suv.jpeg";
+import vehicleLuxury from "../assets/vehicle-luxury.jpeg";
+import vehicleMinibus from "../assets/vehicle-minibus.jpeg";
+import vehicleFleet from "../assets/vehicle-fleet.jpeg";
 
 export default function VehicleShowcase() {
   const scrollToBookingWithVehicle = (vehicleName: string) => {
@@ -15,37 +21,37 @@ export default function VehicleShowcase() {
     {
       name: "Hatchbacks",
       capacity: "3 Seater",
-      image: "/attached_assets/WhatsApp Image 2025-09-01 at 14.57.05_1756742063819.jpeg",
+      image: vehicleHatchback,
       alt: "King Shaka Airport Taxi Hatchback"
     },
     {
       name: "Sedan",
       capacity: "3 Seater",
-      image: "/attached_assets/WhatsApp Image 2025-09-01 at 14.57.06_1756742063813.jpeg",
+      image: vehicleSedan,
       alt: "King Shaka Airport Taxi Sedan"
     },
     {
       name: "SUV",
       capacity: "3 Seater", 
-      image: "/attached_assets/WhatsApp Image 2025-09-01 at 14.57.07_1756742063809.jpeg",
+      image: vehicleSuv,
       alt: "King Shaka Airport Taxi SUV"
     },
     {
       name: "Luxury Cabs",
       capacity: "3 Seater",
-      image: "/attached_assets/WhatsApp Image 2025-09-01 at 14.57.08_1756742063807.jpeg",
+      image: vehicleLuxury,
       alt: "King Shaka Airport Taxi Luxury Cab"
     },
     {
       name: "Mini Bus",
       capacity: "8 Seater",
-      image: "/attached_assets/WhatsApp Image 2025-09-01 at 14.57.09_1756742063818.jpeg",
+      image: vehicleMinibus,
       alt: "King Shaka branded Mini Bus for group transfers"
     },
     {
       name: "Vehicle of Choice",
       capacity: "Personalized",
-      image: "/attached_assets/WhatsApp Image 2025-09-01 at 14.57.10_1756742063817.jpeg",
+      image: vehicleFleet,
       alt: "Fleet of King Shaka Airport Taxi cars lined up outside the airport terminal"
     }
   ];

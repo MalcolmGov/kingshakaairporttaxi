@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Phone, Users, Star, Calendar } from "lucide-react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import teamPhoto from "../assets/team-photo.jpg";
 
 export default function TeamPage() {
   const scrollToBooking = () => {
@@ -73,7 +74,7 @@ export default function TeamPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <img 
-              src="/attached_assets/IMG-20250901-WA0024_1756727031811.jpg" 
+              src={teamPhoto} 
               alt="King Shaka Airport Taxi Team" 
               className="rounded-2xl shadow-2xl w-full mb-8"
               data-testid="img-team-photo"
