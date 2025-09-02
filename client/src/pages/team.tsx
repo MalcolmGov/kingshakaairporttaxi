@@ -73,7 +73,7 @@ export default function TeamPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <img 
-              src="https://kingshakaairporttaxi.co.za/wp-content/uploads/2023/09/WhatsApp-Image-2023-09-05-at-10.38.58.jpeg" 
+              src="/attached_assets/IMG-20250901-WA0024_1756727031811.jpg" 
               alt="King Shaka Airport Taxi Team" 
               className="rounded-2xl shadow-2xl w-full mb-8"
               data-testid="img-team-photo"

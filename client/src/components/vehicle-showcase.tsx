@@ -15,37 +15,37 @@ export default function VehicleShowcase() {
     {
       name: "Hatchbacks",
       capacity: "3 Seater",
-      image: "https://kingshakaairporttaxi.co.za/wp-content/uploads/2023/09/car.06.46-1024x768.jpeg",
+      image: "/attached_assets/WhatsApp Image 2025-09-01 at 14.57.05_1756742063819.jpeg",
       alt: "King Shaka Airport Taxi Hatchback"
     },
     {
       name: "Sedan",
       capacity: "3 Seater",
-      image: "https://kingshakaairporttaxi.co.za/wp-content/uploads/2023/09/WhatsApp-Image-2023-09-05-at-09.06.45-1.jpeg",
+      image: "/attached_assets/WhatsApp Image 2025-09-01 at 14.57.06_1756742063813.jpeg",
       alt: "King Shaka Airport Taxi Sedan"
     },
     {
       name: "SUV",
       capacity: "3 Seater", 
-      image: "https://kingshakaairporttaxi.co.za/wp-content/uploads/2023/09/motor-vehicle.06.45-1024x768.jpeg",
+      image: "/attached_assets/WhatsApp Image 2025-09-01 at 14.57.07_1756742063809.jpeg",
       alt: "King Shaka Airport Taxi SUV"
     },
     {
       name: "Luxury Cabs",
       capacity: "3 Seater",
-      image: "https://kingshakaairporttaxi.co.za/wp-content/uploads/2023/09/WhatsApp-Image-2023-09-07-at-20.19.30.jpeg",
+      image: "/attached_assets/WhatsApp Image 2025-09-01 at 14.57.08_1756742063807.jpeg",
       alt: "King Shaka Airport Taxi Luxury Cab"
     },
     {
       name: "Mini Bus",
       capacity: "8 Seater",
-      image: "https://kingshakaairporttaxi.co.za/wp-content/uploads/2023/09/WhatsApp-Image-2023-09-05-at-09.09.25.jpeg",
+      image: "/attached_assets/WhatsApp Image 2025-09-01 at 14.57.09_1756742063818.jpeg",
       alt: "King Shaka branded Mini Bus for group transfers"
     },
     {
       name: "Vehicle of Choice",
       capacity: "Personalized",
-      image: "https://kingshakaairporttaxi.co.za/wp-content/uploads/2023/09/cars-june112020.jpg",
+      image: "/attached_assets/WhatsApp Image 2025-09-01 at 14.57.10_1756742063817.jpeg",
       alt: "Fleet of King Shaka Airport Taxi cars lined up outside the airport terminal"
     }
   ];
