@@ -81,18 +81,9 @@ export default function VehicleShowcase() {
                 <h3 className="font-semibold text-card-foreground text-base sm:text-lg mb-1" data-testid={`text-vehicle-name-${index}`}>
                   {vehicle.name}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-3" data-testid={`text-vehicle-capacity-${index}`}>
+                <p className="text-muted-foreground text-sm" data-testid={`text-vehicle-capacity-${index}`}>
                   {vehicle.capacity}
                 </p>
-                <Button 
-                  onClick={() => scrollToBookingWithVehicle(vehicle.name)}
-                  size="sm"
-                  className="relative z-20 w-full bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 text-black font-semibold hover:from-yellow-200 hover:via-yellow-300 hover:to-yellow-400 border border-yellow-400"
-                  data-testid={`button-book-vehicle-${index}`}
-                >
-                  <Car className="w-4 h-4 mr-2" />
-                  Book This Vehicle
-                </Button>
               </div>
             </div>
           ))}
