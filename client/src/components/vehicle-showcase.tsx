@@ -77,14 +77,6 @@ export default function VehicleShowcase() {
                 className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 data-testid={`img-vehicle-${index}`}
               />
-              <div className="relative z-10 p-3 sm:p-4">
-                <h3 className="font-semibold text-card-foreground text-base sm:text-lg mb-1" data-testid={`text-vehicle-name-${index}`}>
-                  {vehicle.name}
-                </h3>
-                <p className="text-muted-foreground text-sm" data-testid={`text-vehicle-capacity-${index}`}>
-                  {vehicle.capacity}
-                </p>
-              </div>
             </div>
           ))}
         </div>
