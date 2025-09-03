@@ -4,6 +4,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { useEffect } from "react";
 import teamPhoto from "../assets/team-photo.jpg";
+import teamImage from "@assets/WhatsApp Image 2025-09-01 at 14.57.12 (1)_1756900447525.jpeg";
 
 export default function AboutPage() {
   useEffect(() => {
@@ -112,6 +113,17 @@ export default function AboutPage() {
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
                 Today, we operate a modern fleet of vehicles serving destinations across KZN, from Durban's Golden Mile to the Drakensberg Mountains, maintaining our founding principles of safety, reliability, and professional service.
               </p>
+              
+              {/* Team Image */}
+              <div className="mt-12 mb-8">
+                <img 
+                  src={teamImage} 
+                  alt="King Shaka Airport Taxi Team" 
+                  className="rounded-2xl shadow-2xl w-full max-w-3xl mx-auto"
+                  data-testid="img-team-about"
+                />
+              </div>
+              
               <div className="flex justify-center">
                 <Button 
                   onClick={scrollToBooking}
