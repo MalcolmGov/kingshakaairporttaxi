@@ -82,8 +82,7 @@ export default function AboutPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-r from-primary via-primary/90 to-primary/80 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/src/assets/hero-background.jpg')] bg-cover bg-center opacity-20"></div>
+      <section className="relative py-20 lg:py-32 bg-blue-600 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground mb-6" data-testid="text-about-title">
@@ -99,29 +98,31 @@ export default function AboutPage() {
       {/* Company Overview */}
       <section className="py-16 lg:py-24 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-4xl mx-auto text-center">
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6" data-testid="text-overview-title">
                 Our Story Since 2010
               </h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed max-w-3xl mx-auto">
                 King Shaka Airport Taxi began operations in 2010 with a simple mission: provide reliable, professional taxi service to and from King Shaka International Airport. Over 15 years, we've grown from a small local service to KwaZulu-Natal's trusted transportation provider.
               </p>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed max-w-3xl mx-auto">
                 Our commitment to safety, reliability, and customer service has earned us the trust of thousands of passengers. From individual travelers to corporate clients, we deliver consistent, professional service that exceeds expectations.
               </p>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
                 Today, we operate a modern fleet of vehicles serving destinations across KZN, from Durban's Golden Mile to the Drakensberg Mountains, maintaining our founding principles of safety, reliability, and professional service.
               </p>
-              <Button 
-                onClick={scrollToBooking}
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3"
-                data-testid="button-book-about"
-              >
-                <Car className="w-5 h-5 mr-2" />
-                Experience Our Service
-              </Button>
+              <div className="flex justify-center">
+                <Button 
+                  onClick={scrollToBooking}
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3"
+                  data-testid="button-book-about"
+                >
+                  <Car className="w-5 h-5 mr-2" />
+                  Experience Our Service
+                </Button>
+              </div>
             </div>
           </div>
         </div>
