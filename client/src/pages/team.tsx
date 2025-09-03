@@ -73,13 +73,6 @@ export default function TeamPage() {
       <section className="py-16 lg:py-24 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <img 
-              src={teamPhoto} 
-              alt="King Shaka Airport Taxi Team" 
-              className="rounded-2xl shadow-2xl w-full mb-8"
-              data-testid="img-team-photo"
-            />
-            
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="bg-background rounded-lg p-6 shadow-lg" data-testid="team-highlight-drivers">
                 <Users className="text-primary w-8 h-8 mb-4" />
