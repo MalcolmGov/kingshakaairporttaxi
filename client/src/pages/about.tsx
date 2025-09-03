@@ -123,14 +123,6 @@ export default function AboutPage() {
                 Experience Our Service
               </Button>
             </div>
-            <div className="relative">
-              <img 
-                src={teamPhoto} 
-                alt="King Shaka Airport Taxi Company" 
-                className="rounded-2xl shadow-2xl w-full"
-                data-testid="img-company-overview"
-              />
-            </div>
           </div>
         </div>
       </section>
