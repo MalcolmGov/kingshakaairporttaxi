@@ -48,18 +48,18 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8" data-testid="nav-desktop">
+          <nav className="hidden lg:flex items-center space-x-6" data-testid="nav-desktop">
             <Link href="/" className="text-white hover:text-yellow-400 transition-colors font-medium" data-testid="nav-home">
               Home
             </Link>
-            <button onClick={() => navigateToSection('services')} className="text-white hover:text-yellow-400 transition-colors font-medium" data-testid="nav-services">
+            <Link href="/services" className="text-white hover:text-yellow-400 transition-colors font-medium" data-testid="nav-services">
               Services
-            </button>
-            <button onClick={() => navigateToSection('about')} className="text-white hover:text-yellow-400 transition-colors font-medium" data-testid="nav-about">
+            </Link>
+            <Link href="/areas" className="text-white hover:text-yellow-400 transition-colors font-medium" data-testid="nav-areas">
+              Areas
+            </Link>
+            <Link href="/about" className="text-white hover:text-yellow-400 transition-colors font-medium" data-testid="nav-about">
               About
-            </button>
-            <Link href="/team" className="text-white hover:text-yellow-400 transition-colors font-medium" data-testid="nav-team">
-              Our Team
             </Link>
             <button onClick={() => navigateToSection('contact')} className="text-white hover:text-yellow-400 transition-colors font-medium" data-testid="nav-contact">
               Contact
@@ -90,16 +90,19 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="left" className="w-[300px] sm:w-[400px] bg-black border-gray-800" data-testid="sheet-mobile-menu">
               <nav className="flex flex-col space-y-6 mt-8">
-                <Link href="/" className="text-left text-white hover:text-yellow-400 transition-colors font-medium text-lg" data-testid="mobile-nav-home">
+                <Link href="/" onClick={() => setIsOpen(false)} className="text-left text-white hover:text-yellow-400 transition-colors font-medium text-lg" data-testid="mobile-nav-home">
                   Home
                 </Link>
-                <button onClick={() => navigateToSection('services')} className="text-left text-white hover:text-yellow-400 transition-colors font-medium text-lg" data-testid="mobile-nav-services">
+                <Link href="/services" onClick={() => setIsOpen(false)} className="text-left text-white hover:text-yellow-400 transition-colors font-medium text-lg" data-testid="mobile-nav-services">
                   Services
-                </button>
-                <button onClick={() => navigateToSection('about')} className="text-left text-white hover:text-yellow-400 transition-colors font-medium text-lg" data-testid="mobile-nav-about">
+                </Link>
+                <Link href="/areas" onClick={() => setIsOpen(false)} className="text-left text-white hover:text-yellow-400 transition-colors font-medium text-lg" data-testid="mobile-nav-areas">
+                  Areas
+                </Link>
+                <Link href="/about" onClick={() => setIsOpen(false)} className="text-left text-white hover:text-yellow-400 transition-colors font-medium text-lg" data-testid="mobile-nav-about">
                   About
-                </button>
-                <Link href="/team" className="text-left text-white hover:text-yellow-400 transition-colors font-medium text-lg" data-testid="mobile-nav-team">
+                </Link>
+                <Link href="/team" onClick={() => setIsOpen(false)} className="text-left text-white hover:text-yellow-400 transition-colors font-medium text-lg" data-testid="mobile-nav-team">
                   Our Team
                 </Link>
                 <button onClick={() => navigateToSection('contact')} className="text-left text-white hover:text-yellow-400 transition-colors font-medium text-lg" data-testid="mobile-nav-contact">

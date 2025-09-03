@@ -1,24 +1,30 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+# Prioritize important pages
+Crawl-delay: 1
 
 # XML Sitemap
 Sitemap: https://kingshakaairporttaxi.co.za/sitemap.xml
 
-# Crawl Delay
-Crawl-delay: 1
+# Popular search engines
+User-agent: Googlebot
+Allow: /
 
-# Specific Directives for Better SEO
-Allow: /team
+User-agent: Bingbot
+Allow: /
+
+# Important SEO pages
 Allow: /services
+Allow: /areas
 Allow: /about
-Allow: /contact
-Allow: /booking
-
-# Block unnecessary pages
-Disallow: /api/
-Disallow: /admin/
-Disallow: /*.json$
-Disallow: /*?*
+Allow: /team
+Allow: /durban-airport-taxi
+Allow: /umhlanga-airport-taxi
+Allow: /ballito-airport-taxi
+Allow: /pietermaritzburg-airport-taxi
 
 # Allow important assets
 Allow: /*.css$
