@@ -10,7 +10,7 @@ export default function KznDestinations() {
     {
       name: "Durban Beachfront Transfer",
       description: "Direct transport to Golden Mile beaches", 
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       alt: "Airport taxi to Durban beachfront Golden Mile",
       url: "https://www.durban.gov.za/discover/attractions/beachfront"
     },
