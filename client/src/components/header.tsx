@@ -61,6 +61,9 @@ export default function Header() {
             <Link href="/about" className="text-white hover:text-yellow-400 transition-colors font-medium" data-testid="nav-about">
               About
             </Link>
+            <Link href="/team" className="text-white hover:text-yellow-400 transition-colors font-medium" data-testid="nav-team">
+              Our Team
+            </Link>
             <button onClick={() => navigateToSection('contact')} className="text-white hover:text-yellow-400 transition-colors font-medium" data-testid="nav-contact">
               Contact
             </button>
