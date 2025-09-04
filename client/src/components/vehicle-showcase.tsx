@@ -19,10 +19,34 @@ export default function VehicleShowcase() {
   };
   const vehicles = [
     {
-      name: "Professional Fleet",
-      capacity: "All Sizes Available",
+      name: "Hatchbacks",
+      capacity: "3 Seater",
       image: vehicleHatchback,
-      alt: "King Shaka Airport Taxi Professional Fleet"
+      alt: "King Shaka Airport Taxi Hatchback"
+    },
+    {
+      name: "Sedan",
+      capacity: "3 Seater",
+      image: vehicleSedan,
+      alt: "King Shaka Airport Taxi Sedan"
+    },
+    {
+      name: "SUV",
+      capacity: "3 Seater", 
+      image: vehicleSuv,
+      alt: "King Shaka Airport Taxi SUV"
+    },
+    {
+      name: "Luxury Cabs",
+      capacity: "3 Seater",
+      image: vehicleLuxury,
+      alt: "King Shaka Airport Taxi Luxury Cab"
+    },
+    {
+      name: "Mini Bus",
+      capacity: "8 Seater",
+      image: vehicleMinibus,
+      alt: "King Shaka branded Mini Bus for group transfers"
     }
   ];
 
