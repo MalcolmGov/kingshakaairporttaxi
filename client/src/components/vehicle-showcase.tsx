@@ -1,5 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Car } from "lucide-react";
+import vehicleHatchback from "../assets/vehicle-hatchback.jpeg";
+import vehicleSedan from "../assets/vehicle-sedan.jpeg";
+import vehicleSuv from "../assets/vehicle-suv.jpeg";
+import vehicleLuxury from "../assets/vehicle-luxury.jpeg";
+import vehicleMinibus from "../assets/vehicle-minibus.jpeg";
+import vehicleFleet from "../assets/vehicle-fleet.jpeg";
 
 export default function VehicleShowcase() {
   const scrollToBookingWithVehicle = (vehicleName: string) => {
@@ -15,37 +21,37 @@ export default function VehicleShowcase() {
     {
       name: "Hatchbacks",
       capacity: "3 Seater",
-      image: "https://images.unsplash.com/photo-1549824124-6fdaa30ac096?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: vehicleHatchback,
       alt: "King Shaka Airport Taxi Hatchback"
     },
     {
       name: "Sedan",
       capacity: "3 Seater",
-      image: "https://images.unsplash.com/photo-1550355291-bbee04a92027?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: vehicleSedan,
       alt: "King Shaka Airport Taxi Sedan"
     },
     {
       name: "SUV",
       capacity: "3 Seater", 
-      image: "https://images.unsplash.com/photo-1566473179817-0dcc6d51a4c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: vehicleSuv,
       alt: "King Shaka Airport Taxi SUV"
     },
     {
       name: "Luxury Cabs",
       capacity: "3 Seater",
-      image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: vehicleLuxury,
       alt: "King Shaka Airport Taxi Luxury Cab"
     },
     {
       name: "Mini Bus",
       capacity: "8 Seater",
-      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: vehicleMinibus,
       alt: "King Shaka branded Mini Bus for group transfers"
     },
     {
       name: "Vehicle of Choice",
       capacity: "Personalized",
-      image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      image: vehicleFleet,
       alt: "Fleet of King Shaka Airport Taxi cars lined up outside the airport terminal"
     }
   ];
