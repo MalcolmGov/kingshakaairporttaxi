@@ -1,5 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Car } from "lucide-react";
+import fleetVehicle1 from "@assets/WhatsApp Image 2025-09-01 at 14.57.10_1756985085623.jpeg";
+import fleetVehicle2 from "@assets/WhatsApp Image 2025-09-01 at 14.57.09_1756985085623.jpeg";
+import fleetVehicle3 from "@assets/WhatsApp Image 2025-09-01 at 14.57.05_1756985085624.jpeg";
 
 export default function VehicleShowcase() {
   const scrollToBookingWithVehicle = (vehicleName: string) => {
@@ -13,22 +16,22 @@ export default function VehicleShowcase() {
   };
   const vehicles = [
     {
-      name: "Sedan",
+      name: "Professional Fleet Vehicle",
       capacity: "3 Seater",
-      image: "https://images.unsplash.com/photo-1550355291-bbee04a92027?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      alt: "King Shaka Airport Taxi Sedan"
+      image: fleetVehicle1,
+      alt: "King Shaka Airport Taxi Professional Vehicle"
     },
     {
-      name: "SUV",
-      capacity: "5 Seater", 
-      image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      alt: "King Shaka Airport Taxi SUV"
+      name: "Comfort Sedan",
+      capacity: "4 Seater", 
+      image: fleetVehicle2,
+      alt: "King Shaka Airport Taxi Comfort Sedan"
     },
     {
-      name: "Luxury Vehicle",
+      name: "Executive Transport",
       capacity: "3 Seater",
-      image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      alt: "King Shaka Airport Taxi Luxury Vehicle"
+      image: fleetVehicle3,
+      alt: "King Shaka Airport Taxi Executive Vehicle"
     }
   ];
 
