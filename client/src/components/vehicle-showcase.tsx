@@ -1,11 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Car } from "lucide-react";
-import vehicleHatchback from "../assets/vehicle-hatchback.jpeg";
-import vehicleSedan from "../assets/vehicle-sedan.jpeg";
-import vehicleSuv from "../assets/vehicle-suv.jpeg";
-import vehicleLuxury from "../assets/vehicle-luxury.jpeg";
-import vehicleMinibus from "../assets/vehicle-minibus.jpeg";
-import vehicleFleet from "../assets/vehicle-fleet.jpeg";
 
 export default function VehicleShowcase() {
   const scrollToBookingWithVehicle = (vehicleName: string) => {
@@ -19,34 +13,22 @@ export default function VehicleShowcase() {
   };
   const vehicles = [
     {
-      name: "Hatchbacks",
-      capacity: "3 Seater",
-      image: vehicleHatchback,
-      alt: "King Shaka Airport Taxi Hatchback"
-    },
-    {
       name: "Sedan",
       capacity: "3 Seater",
-      image: vehicleSedan,
+      image: "https://images.unsplash.com/photo-1550355291-bbee04a92027?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       alt: "King Shaka Airport Taxi Sedan"
     },
     {
       name: "SUV",
-      capacity: "3 Seater", 
-      image: vehicleSuv,
+      capacity: "5 Seater", 
+      image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       alt: "King Shaka Airport Taxi SUV"
     },
     {
-      name: "Luxury Cabs",
+      name: "Luxury Vehicle",
       capacity: "3 Seater",
-      image: vehicleLuxury,
-      alt: "King Shaka Airport Taxi Luxury Cab"
-    },
-    {
-      name: "Mini Bus",
-      capacity: "8 Seater",
-      image: vehicleMinibus,
-      alt: "King Shaka branded Mini Bus for group transfers"
+      image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      alt: "King Shaka Airport Taxi Luxury Vehicle"
     }
   ];
 
