@@ -19,28 +19,10 @@ export default function VehicleShowcase() {
   };
   const vehicles = [
     {
-      name: "Hatchbacks",
-      capacity: "3 Seater",
+      name: "Professional Fleet",
+      capacity: "All Sizes Available",
       image: vehicleHatchback,
-      alt: "King Shaka Airport Taxi Hatchback"
-    },
-    {
-      name: "Sedan",
-      capacity: "3 Seater",
-      image: vehicleSedan,
-      alt: "King Shaka Airport Taxi Sedan"
-    },
-    {
-      name: "SUV",
-      capacity: "3 Seater", 
-      image: vehicleSuv,
-      alt: "King Shaka Airport Taxi SUV"
-    },
-    {
-      name: "Luxury Cabs",
-      capacity: "3 Seater",
-      image: vehicleLuxury,
-      alt: "King Shaka Airport Taxi Luxury Cab"
+      alt: "King Shaka Airport Taxi Professional Fleet"
     }
   ];
 
