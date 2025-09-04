@@ -21,37 +21,37 @@ export default function VehicleShowcase() {
     {
       name: "Hatchbacks",
       capacity: "3 Seater",
-      image: vehicleHatchback,
+      image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       alt: "King Shaka Airport Taxi Hatchback"
     },
     {
       name: "Sedan",
       capacity: "3 Seater",
-      image: vehicleSedan,
+      image: "https://images.unsplash.com/photo-1550355291-bbee04a92027?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       alt: "King Shaka Airport Taxi Sedan"
     },
     {
       name: "SUV",
       capacity: "3 Seater", 
-      image: vehicleSuv,
+      image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       alt: "King Shaka Airport Taxi SUV"
     },
     {
       name: "Luxury Cabs",
       capacity: "3 Seater",
-      image: vehicleLuxury,
+      image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       alt: "King Shaka Airport Taxi Luxury Cab"
     },
     {
       name: "Mini Bus",
       capacity: "8 Seater",
-      image: vehicleMinibus,
+      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       alt: "King Shaka branded Mini Bus for group transfers"
     },
     {
       name: "Vehicle of Choice",
       capacity: "Personalized",
-      image: vehicleFleet,
+      image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       alt: "Fleet of King Shaka Airport Taxi cars lined up outside the airport terminal"
     }
   ];
