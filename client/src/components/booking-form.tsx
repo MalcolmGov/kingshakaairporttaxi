@@ -96,12 +96,12 @@ King Shaka Airport Taxi - Since 2010`;
     const primaryNumber = "27833423975";
     const message = formatBookingMessage(lastBookingData);
     
-    // Force WhatsApp Web to ensure pre-filled messages work
-    const whatsappWebUrl = `https://web.whatsapp.com/send?phone=${primaryNumber}&text=${encodeURIComponent(message)}`;
-    console.log('WhatsApp Web URL:', whatsappWebUrl);
+    // Open WhatsApp with pre-filled message (mobile app or web)
+    const whatsappUrl = `https://wa.me/${primaryNumber}?text=${encodeURIComponent(message)}`;
+    console.log('WhatsApp URL:', whatsappUrl);
     
-    // Open WhatsApp Web specifically
-    window.open(whatsappWebUrl, '_blank');
+    // Open WhatsApp (automatically detects mobile app or web)
+    window.open(whatsappUrl, '_blank');
   };
 
   // Booking submission mutation
@@ -119,8 +119,8 @@ King Shaka Airport Taxi - Since 2010`;
       // Immediately open WhatsApp with booking details
       const primaryNumber = "27833423975";
       const message = formatBookingMessage(variables);
-      const whatsappWebUrl = `https://web.whatsapp.com/send?phone=${primaryNumber}&text=${encodeURIComponent(message)}`;
-      window.open(whatsappWebUrl, '_blank');
+      const whatsappUrl = `https://wa.me/${primaryNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
       
       toast({
         title: "Booking Sent to WhatsApp!",
