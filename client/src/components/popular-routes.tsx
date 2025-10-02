@@ -29,7 +29,7 @@ export default function PopularRoutes() {
       description: "Provincial capital city transfer service"
     },
     {
-      route: "Richards Bay to St Lucia",
+      route: "King Shaka to St Lucia",
       duration: "1 hour",
       description: "Coastal wetland paradise and wildlife destination"
     }
