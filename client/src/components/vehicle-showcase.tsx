@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Car } from "lucide-react";
-import fleetVehicle1 from "@assets/WhatsApp Image 2025-09-01 at 14.57.10_1756985085623.jpeg";
-import fleetVehicle2 from "@assets/WhatsApp Image 2025-09-01 at 14.57.09_1756985085623.jpeg";
-import fleetVehicle3 from "@assets/WhatsApp Image 2025-09-01 at 14.57.05_1756985085624.jpeg";
+import fleetVehicle1 from "@assets/WhatsApp Image 2025-09-01 at 14.57.10_1756742063817.jpeg";
+import fleetVehicle2 from "@assets/WhatsApp Image 2025-09-01 at 14.57.09_1756742063818.jpeg";
+import fleetVehicle3 from "@assets/WhatsApp Image 2025-09-01 at 14.57.05_1756742063819.jpeg";
 
 export default function VehicleShowcase() {
   const scrollToBookingWithVehicle = (vehicleName: string) => {
