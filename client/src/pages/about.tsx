@@ -4,7 +4,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { useEffect } from "react";
 import teamPhoto from "../assets/team-photo.jpg";
-import teamImage from "@assets/WhatsApp Image 2025-09-01 at 14.57.12 (1)_1756900447525.jpeg";
+import teamImage from "@assets/WhatsApp Image 2025-09-01 at 14.57.12_1756742063815.jpeg";
 
 export default function AboutPage() {
   useEffect(() => {
